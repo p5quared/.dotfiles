@@ -2,6 +2,12 @@ local lsp = require('lsp-zero')
 
 lsp.preset("recommended")
 lsp.setup()
+lsp.clangd.setup({
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16"
+	}
+})
 
 local cmp = require('cmp')
 cmp.setup({
