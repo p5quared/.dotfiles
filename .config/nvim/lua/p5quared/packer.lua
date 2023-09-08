@@ -4,6 +4,10 @@
 -- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
+	use '~/Code/nvim-autolab'
+
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -107,6 +111,8 @@ use({ "iamcco/markdown-preview.nvim",
 		vim.g.mkdp_filetypes = { "markdown" } 
 	end,
 	ft = { "markdown" }, })
+
+use ('lervag/vimtex')
 
 -- use {
 --   "zbirenbaum/copilot.lua",
