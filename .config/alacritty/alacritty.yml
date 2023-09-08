@@ -1,7 +1,7 @@
 window:
   decorations: none
 
-  opacity: 0.7
+  opacity: 0.4
 
 
 # Font configuration (changes require restart)
@@ -9,7 +9,7 @@ font:
   # Normal (roman) font face
   normal:
     family: JetBrainsMono Nerd Font Mono
-    style: Thin
+    style: ExtraLight # Thin Light ExtraLight Regular
   bold:
     family: JetBrainsMono Nerd Font Mono
     style: SemiBold
@@ -17,7 +17,7 @@ font:
     family: JetBrainsMono Nerd Font Mono
     style: LightItalic
 
-  size: 18
+  size: 16
 
 mouse:
   hide_when_typing: true
