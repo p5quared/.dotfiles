@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
 
 	use '~/Code/nvim-autolab'
 
-
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -62,11 +61,6 @@ return require('packer').startup(function(use)
   -- wave, dragon, lotus
   use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 
-
-  use('mbbill/undotree')
-
-  use('tpope/vim-fugitive')
-
   -- Status Bar --
   use {
 	  'nvim-lualine/lualine.nvim',
@@ -95,8 +89,6 @@ return require('packer').startup(function(use)
   }
 } -- END LSP --
 
-use ( "github/copilot.vim" )
-
 use {
 	"ThePrimeagen/refactoring.nvim",
 	requires = {
@@ -113,25 +105,5 @@ use({ "iamcco/markdown-preview.nvim",
 	ft = { "markdown" }, })
 
 use ('lervag/vimtex')
-
--- use {
---   "zbirenbaum/copilot.lua",
---   cmd = "Copilot",
---   event = "InsertEnter",
---   config = function()
---     require("copilot").setup({
--- 		suggestion = { enabled = false },
--- 		panel = { enabled = false }
--- 	})
---   end,
--- }
---
--- use {
---   "zbirenbaum/copilot-cmp",
---   after = {"copilot.lua"},
---   config = function()
---     require("copilot_cmp").setup()
---   end,
--- }
 
 end)
