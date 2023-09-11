@@ -1,6 +1,6 @@
 # ~.dotfiles/
 Welcome to my dotfiles repository.
-![Hero](misc/hero.png)
+![Hero](misc/Neovim.png)
 
 ## Background
 The other day I accidentally broke my MBP (broke login).
@@ -65,5 +65,6 @@ Along with some others that have snuck in here.
 ├── .zshrc
 └── README.md
 ```
-![Neovim Image](misc/Neovim.png)
+# Gallery
+![LaTeX](misc/LaTeX.png)
 ![Yabai Image](misc/Yabai.png)
