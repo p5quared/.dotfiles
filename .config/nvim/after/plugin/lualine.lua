@@ -11,13 +11,14 @@ local colors = {
   yellow   = '#ECBE7B',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
+  green    = '#8ABF8C',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
-  magenta  = '#c678dd',
+  magenta  = '#9E74A0',
   blue     = '#51afef',
-  red      = '#ec5f67',
+  red      = '#C46475',
 }
+
 
 local conditions = {
   buffer_not_empty = function()
@@ -175,7 +176,7 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = { fg = '#ffffff', gui = 'bold' },
+  color = { fg = colors.red, gui = 'bold' },
 }
 
 -- Add components to right sections
