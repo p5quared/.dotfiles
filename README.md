@@ -1,6 +1,6 @@
 # ~.dotfiles/
 Welcome to my dotfiles repository.
-![Hero](misc/Neovim.png)
+![Hero](misc/hero.png)
 
 ## Background
 The other day I accidentally broke my MBP (broke login).
