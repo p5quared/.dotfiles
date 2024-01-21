@@ -5,7 +5,7 @@
 
 return require('packer').startup(function(use)
 
-	use '~/Code/nvim-autolab'
+ use '~/Code/nvim-autolab'
 
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
   }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground', {run = ':TSUpdate'})
 
 -- Colors / Themes --
   use({ 'rose-pine/neovim', as = 'rose-pine',
@@ -28,6 +27,14 @@ return require('packer').startup(function(use)
 		  })
 	  end
   })
+
+use {
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    requires = "rktjmp/lush.nvim"
+}
 
   use({ "loctvl842/monokai-pro.nvim", config = function () require('monokai-pro').setup({
 	  transparent_background = true,
@@ -61,13 +68,42 @@ return require('packer').startup(function(use)
   -- wave, dragon, lotus
   use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 
+  use({
+    'ramojus/mellifluous.nvim',
+    config = function()
+        require'mellifluous'.setup({
+			transparent_background = {
+				enabled = true,
+			}
+		})
+    end
+	})
+
+	use ({"EdenEast/nightfox.nvim",
+		config = function ()
+			require('nightfox').setup({
+			options = {
+				transparent = true
+			}
+			})
+		end
+	}) -- Packer
+
   -- Status Bar --
   use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true}
   }
 
+  use ({"github/copilot.vim"})
+
   -- LSP Setup --
+
+  use ({ "folke/neodev.nvim" })
+	use ({ "folke/trouble.nvim" })
+
+
+
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
@@ -100,10 +136,12 @@ use {
 use({ "iamcco/markdown-preview.nvim",
 	run = "cd app && npm install",
 	setup = function()
-		vim.g.mkdp_filetypes = { "markdown" } 
+		vim.g.mkdp_filetypes = { "markdown" }
 	end,
 	ft = { "markdown" }, })
 
 use ('lervag/vimtex')
+
+use({"norcalli/nvim-colorizer.lua"})
 
 end)

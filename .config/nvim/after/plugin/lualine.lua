@@ -80,21 +80,7 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.red }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
-
-ins_left {
-  -- mode component
-  function()
-    return '♥ℙ'
-  end,
-  color = function()
-    -- auto change color according to neovims mode
+local function dynamic_colors()
     local mode_color = {
       n = colors.red,
       i = colors.green,
@@ -118,15 +104,32 @@ ins_left {
       t = colors.red,
     }
     return { fg = mode_color[vim.fn.mode()] }
+  end
+
+ins_left {
+  function()
+    return '▊'
   end,
-  padding = { right = 1 },
+--  color = { fg = colors.red }, -- Sets highlighting of component
+	color = dynamic_colors,
+  padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
 ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
+  -- mode component
+  function()
+    return 'PP'
+  end,
+  color = dynamic_colors,
+  padding = { right = 1 },
 }
+
+-- ins_left {
+--   -- filesize component
+--   'filesize',
+--   cond = conditions.buffer_not_empty,
+-- }
+
 
 ins_left {
   'filename',
@@ -135,14 +138,14 @@ ins_left {
   color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left { 'location' }
+-- ins_left { 'location' }
 
 ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  symbols = { error = 'Err', warn = 'Warn', info = 'Info' },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
@@ -175,7 +178,7 @@ ins_left {
     end
     return msg
   end,
-  icon = ' LSP:',
+  icon = 'LSP:',
   color = { fg = colors.red, gui = 'bold' },
 }
 
@@ -196,14 +199,14 @@ ins_right {
 
 ins_right {
   'branch',
-  icon = '',
+  icon = 'b ',
   color = { fg = colors.violet, gui = 'bold' },
 }
 
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '~ ', removed = ' ' },
+  symbols = { added = '+ ', modified = '~ ', removed = '- ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
@@ -216,7 +219,7 @@ ins_right {
   function()
     return '▊'
   end,
-  color = { fg = colors.red },
+  color = dynamic_colors,
   padding = { left = 1 },
 }
 
