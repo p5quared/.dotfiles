@@ -1,7 +1,6 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
-local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
@@ -223,5 +222,4 @@ ins_right {
   padding = { left = 1 },
 }
 
--- Now don't forget to initialize lualine
-lualine.setup(config)
+return { 'nvim-lualine/lualine.nvim', opts = config }
