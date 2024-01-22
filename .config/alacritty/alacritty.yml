@@ -8,15 +8,14 @@ window:
 font:
   # Normal (roman) font face
   normal:
-    family: Monaspace Xenon
+    family: Monaspace Radon Var
     style: Regular
   bold:
-    family: Monaspace Krypton
-    style: Bold # Thin Light ExtraLight Regular
+    family: Monaspace Krypton Var
+    style: SemiBold # Thin Light ExtraLight Regular
   italic:
-    family: Monaspace Radon
-    style: Regular
-
+    family: Victor Mono
+    style: Italic
   size: 18
 
 mouse:
