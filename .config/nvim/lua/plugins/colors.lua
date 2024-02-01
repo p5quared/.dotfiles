@@ -8,12 +8,14 @@ return {
 	"rebelot/kanagawa.nvim",
 	'ramojus/mellifluous.nvim',
 	"EdenEast/nightfox.nvim",
+	'AlexvZyl/nordic.nvim',
 
-	{"mcchrish/zenbones.nvim",
-	dependencies = {
-		"rktjmp/lush.nvim"
-	}
-},
+	{
+		"mcchrish/zenbones.nvim",
+		dependencies = {
+			"rktjmp/lush.nvim"
+		},
+	},
 
 	-- Not a colorscheme
 	{
