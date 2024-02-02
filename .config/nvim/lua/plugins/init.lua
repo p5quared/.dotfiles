@@ -1,6 +1,8 @@
 return {
-	{ "folke/lazy.nvim", version = false },
-	"folke/neodev.nvim",
+	{
+		"folke/neodev.nvim",
+		config = {}
+	},
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',

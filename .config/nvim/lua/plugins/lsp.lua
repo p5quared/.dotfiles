@@ -3,8 +3,9 @@ return {
 	branch = 'v2.x',
 	dependencies = {
 		-- LSP Support
+		{ 'folke/neodev.nvim' },
 		{ 'neovim/nvim-lspconfig' }, -- Required
-		{                       -- Optional
+		{                      -- Optional
 			'williamboman/mason.nvim',
 			init = function()
 				pcall(vim.cmd, 'MasonUpdate')
@@ -16,6 +17,7 @@ return {
 		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 		{ 'L3MON4D3/LuaSnip' }, -- Required
+		--		{ 'onsails/lspkind.nvim' },
 	},
 	init = function()
 		local lsp = require('lsp-zero')
@@ -26,8 +28,9 @@ return {
 			lsp.default_keymaps({ buffer = bufnr })
 
 			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', { buffer = bufnr })
-			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { buffer = bufnr })
-			vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts)
+			vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { buffer = bufnr })
+			vim.keymap.set("n", "<leader>dk", function() vim.diagnostic.open_float() end, opts)
+			vim.keymap.set("n", "<leader>da", function() vim.lsp.buf.code_action() end, opts)
 		end)
 
 		lsp.format_on_save({
@@ -39,10 +42,17 @@ return {
 				['lua_ls'] = { 'lua' },
 				['tsserver'] = { 'javascript', 'typescript' },
 				['svelte-language-server'] = { 'svelte' },
-				['gopls'] = { 'go' }
+				['gopls'] = { 'go' },
+				--				['ocamllsp'] = { 'ocaml' },
 			}
 		})
 
+		lsp.set_sign_icons({
+			error = '✘',
+			warn = '▲',
+			hint = '⚑',
+			info = '»'
+		})
 		lsp.setup()
 
 		local cmp = require('cmp')
@@ -52,9 +62,23 @@ return {
 					-- documentation says this is important.
 					-- I don't know why.
 					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
+					select = true,
 				})
-			}
+			},
+			formatting = {
+				fields = { 'abbr', 'kind', 'menu' },
+				format = function(entry, item)
+					local menu_icon = {
+						nvim_lsp = 'λ',
+						luasnip = '⋗',
+						buffer = 'Ω',
+						path = '🖫',
+						nvim_lua = 'Π',
+					}
+					item.menu = menu_icon[entry.source.name]
+					return item
+				end,
+			},
 		})
 	end,
-}  -- END LSP-ZERO --
+} -- END LSP-ZERO --

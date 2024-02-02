@@ -1,6 +1,8 @@
 return {
 	'nvim-treesitter',
 	build = ":TSUpdate",
+	-- TODO: Verify if this should be changed to
+	-- 'opts' rather than config... see the docs
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 		configs.setup({
