@@ -1,3 +1,5 @@
+-- TODO: Configure to lazy-load wherever possible.
+
 return {
 	{
 		"folke/neodev.nvim",

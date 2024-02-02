@@ -1,5 +1,6 @@
 return {
 	'VonHeikemen/lsp-zero.nvim',
+	lazy = true,
 	branch = 'v2.x',
 	dependencies = {
 		-- LSP Support
@@ -7,7 +8,9 @@ return {
 		{ 'neovim/nvim-lspconfig' }, -- Required
 		{                      -- Optional
 			'williamboman/mason.nvim',
+			lazy = false,
 			init = function()
+---@diagnostic disable-next-line: param-type-mismatch
 				pcall(vim.cmd, 'MasonUpdate')
 			end,
 		},
@@ -29,7 +32,6 @@ return {
 
 			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', { buffer = bufnr })
 			vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { buffer = bufnr })
-			vim.keymap.set("n", "<leader>dk", function() vim.diagnostic.open_float() end, opts)
 			vim.keymap.set("n", "<leader>da", function() vim.lsp.buf.code_action() end, opts)
 		end)
 
@@ -53,8 +55,8 @@ return {
 			hint = '⚑',
 			info = '»'
 		})
-		lsp.setup()
 
+		lsp.setup()
 		local cmp = require('cmp')
 		cmp.setup({
 			mapping = {
@@ -66,6 +68,7 @@ return {
 				})
 			},
 			formatting = {
+				expandable_indicator = false,
 				fields = { 'abbr', 'kind', 'menu' },
 				format = function(entry, item)
 					local menu_icon = {
@@ -81,4 +84,4 @@ return {
 			},
 		})
 	end,
-} -- END LSP-ZERO --
+}
