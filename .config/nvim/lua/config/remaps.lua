@@ -20,10 +20,27 @@ vim.keymap.set("n", "<C-K>", "<C-W><C-K>")
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>")
 vim.keymap.set("n", "<C-H>", "<C-W><C-H>")
 
+-- Space resized
+vim.keymap.set("n", "<C-up>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-down>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-left>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-right>", ":vertical resize -2<CR>")
+
 -- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ft', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
+local tb = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', tb.find_files)
+vim.keymap.set('n', '<leader>ft', tb.git_files)
+vim.keymap.set('n', '<leader>fg', tb.live_grep)
+vim.keymap.set('n', '<leader>fb', tb.buffers)
+vim.keymap.set('n', '<leader>fc', tb.colorscheme)
+vim.keymap.set('n', '<leader>fk', tb.keymaps)
+
+local ref = require('refactoring')
+vim.keymap.set("x", "<leader>re", function() ref.refactor('Extract Function') end)
+vim.keymap.set("x", "<leader>rf", function() ref.refactor('Extract Function To File') end)
+
+vim.keymap.set("x", "<leader>rv", function() ref.refactor('Extract Variable') end)
+
+vim.keymap.set("n", "<leader>rI", function() ref.refactor('Inline Function') end)
+
+vim.keymap.set({ "n", "x" }, "<leader>ri", function() ref.refactor('Inline Variable') end)

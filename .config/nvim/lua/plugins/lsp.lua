@@ -10,7 +10,7 @@ return {
 			'williamboman/mason.nvim',
 			lazy = false,
 			init = function()
----@diagnostic disable-next-line: param-type-mismatch
+				---@diagnostic disable-next-line: param-type-mismatch
 				pcall(vim.cmd, 'MasonUpdate')
 			end,
 		},
@@ -31,7 +31,7 @@ return {
 			lsp.default_keymaps({ buffer = bufnr })
 
 			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', { buffer = bufnr })
-			vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { buffer = bufnr })
+			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { buffer = bufnr })
 			vim.keymap.set("n", "<leader>da", function() vim.lsp.buf.code_action() end, opts)
 		end)
 

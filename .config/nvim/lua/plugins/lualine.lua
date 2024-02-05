@@ -33,10 +33,10 @@ local conditions = {
 	end,
 }
 
+
 -- Config
 local config = {
 	options = {
-		-- Disable sections and component separators
 		component_separators = '',
 		section_separators = '',
 		theme = {
@@ -105,6 +105,7 @@ local function dynamic_colors()
 	return { fg = mode_color[vim.fn.mode()] }
 end
 
+
 ins_left {
 	function()
 		return '▊'
@@ -115,10 +116,7 @@ ins_left {
 }
 
 ins_left {
-	-- mode component
-	function()
-		return 'PP'
-	end,
+	'mode',
 	color = dynamic_colors,
 	padding = { right = 1 },
 }
@@ -144,7 +142,7 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 ins_left {
 	'diagnostics',
 	sources = { 'nvim_diagnostic' },
-	symbols = { error = 'Err', warn = 'Warn', info = 'Info' },
+	symbols = { error = ' ', warn = ' ', info = ' ' },
 	diagnostics_color = {
 		color_error = { fg = colors.red },
 		color_warn = { fg = colors.yellow },
@@ -178,23 +176,9 @@ ins_left {
 		return msg
 	end,
 	icon = 'LSP:',
-	color = { fg = colors.red, gui = 'bold' },
+	color = { fg = colors.red, gui = 'italic' },
 }
 
--- Add components to right sections
-ins_right {
-	'o:encoding',    -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = conditions.hide_in_width,
-	color = { fg = colors.green, gui = 'bold' },
-}
-
-ins_right {
-	'fileformat',
-	fmt = string.upper,
-	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-	color = { fg = colors.green, gui = 'bold' },
-}
 
 ins_right {
 	'branch',
@@ -216,10 +200,11 @@ ins_right {
 
 ins_right {
 	function()
-		return '▊'
+		return tostring(os.date('%b %d %I:%M%p'))
 	end,
-	color = dynamic_colors,
-	padding = { left = 1 },
+	color = {
+		fg = colors.fg,
+		gui = 'bold' },
 }
 
 return {

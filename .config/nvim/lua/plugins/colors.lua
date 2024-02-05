@@ -1,15 +1,23 @@
 return {
 	'rose-pine/neovim',
-	"loctvl842/monokai-pro.nvim",
-	"ellisonleao/gruvbox.nvim",
 	'arcticicestudio/nord-vim',
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",
-	'ramojus/mellifluous.nvim',
-	"EdenEast/nightfox.nvim",
-	'AlexvZyl/nordic.nvim',
+	{
+		'ramojus/mellifluous.nvim',
+		opts = {
+			color_set = 'mellifluous',
 
+			styles = {
+				comments = { italic = true },
+				keywords = { bold = true },
+				types = { italic = true },
+			},
+		}
+	},
+	'AlexvZyl/nordic.nvim',
+	"nyoom-engineering/oxocarbon.nvim",
 	{
 		"mcchrish/zenbones.nvim",
 		dependencies = {
