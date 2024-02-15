@@ -3,7 +3,6 @@
 -- Credit: glepnir
 
 -- Color table for highlights
--- stylua: ignore
 local colors = {
 	bg       = '#202328',
 	fg       = '#bbc2cf',
@@ -127,6 +126,9 @@ ins_left {
 --   cond = conditions.buffer_not_empty,
 -- }
 
+ins_left {
+	'filetype'
+}
 
 ins_left {
 	'filename',
