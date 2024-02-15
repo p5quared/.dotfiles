@@ -31,10 +31,10 @@ return {
 		opts = {
 			'css',
 			'javascript',
+			'lua',
 			html = {
 				mode = 'foreground',
 			}
 		}
 	}
-
 }
