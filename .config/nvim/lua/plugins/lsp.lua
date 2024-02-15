@@ -20,7 +20,11 @@ return {
 		{ 'hrsh7th/nvim-cmp' }, -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 		{ 'L3MON4D3/LuaSnip' }, -- Required
-		--		{ 'onsails/lspkind.nvim' },
+		{ 'hrsh7th/cmp-cmdline' },
+		{ 'hrsh7th/cmp-path' },
+		{ 'hrsh7th/cmp-buffer' },
+		{ 'onsails/lspkind.nvim' },
+		{ 'saadparwaiz1/cmp_luasnip' }
 	},
 	init = function()
 		local lsp = require('lsp-zero')
@@ -35,6 +39,17 @@ return {
 			vim.keymap.set("n", "<leader>da", function() vim.lsp.buf.code_action() end, opts)
 		end)
 
+
+		lsp.new_server({
+			name = 'mipspls',
+			cmd = { 'lsp_scratch' },
+			filetypes = { '.s', '.mips', '.asm', 'asm', 's', 'mips' },
+			root_dir = function()
+				return lsp.dir.find_first({ '.mipsproj', 'mipsproj' })
+			end,
+		})
+
+
 		lsp.format_on_save({
 			format_opts = {
 				async = true,
@@ -45,7 +60,8 @@ return {
 				['tsserver'] = { 'javascript', 'typescript' },
 				['svelte-language-server'] = { 'svelte' },
 				['gopls'] = { 'go' },
-				--				['ocamllsp'] = { 'ocaml' },
+				['asmfmt'] = { 'asm', 's' }, -- don't work
+				['ocamlformat'] = { 'ocaml' },
 			}
 		})
 
@@ -58,30 +74,60 @@ return {
 
 		lsp.setup()
 		local cmp = require('cmp')
+		local lspkind = require('lspkind')
+
 		cmp.setup({
+			window = {
+				--completion = cmp.config.window.bordered(),
+				--				documentation = cmp.config.window.bordered()
+			},
+			snippet = {
+				expand = function(args)
+					require('luasnip').lsp_expand(args.body)
+				end,
+			},
 			mapping = {
 				['<CR>'] = cmp.mapping.confirm({
 					-- documentation says this is important.
 					-- I don't know why.
 					behavior = cmp.ConfirmBehavior.Replace,
+					-- TODO: Evaluate whether we really should
+					-- be selecting automatically
 					select = true,
 				})
 			},
 			formatting = {
-				expandable_indicator = false,
+				expandable_indicator = true,
 				fields = { 'abbr', 'kind', 'menu' },
-				format = function(entry, item)
-					local menu_icon = {
-						nvim_lsp = 'λ',
-						luasnip = '⋗',
-						buffer = 'Ω',
-						path = '🖫',
-						nvim_lua = 'Π',
-					}
-					item.menu = menu_icon[entry.source.name]
-					return item
-				end,
+				format = lspkind.cmp_format({
+					mode = 'symbol_text',
+					ellipses_char = '…',
+					show_labelDetails = true,
+				})
 			},
+			sources = cmp.config.sources({
+				{ name = 'luasnip' },
+				{ name = 'nvim_lsp' },
+			}, {
+				{ name = 'buffer' },
+			})
+		})
+
+
+
+		cmp.setup.cmdline({ '/', '?' }, {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = 'buffer' },
+			},
+		})
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' },
+			}, {
+				{ name = 'cmdline' },
+			})
 		})
 	end,
 }
