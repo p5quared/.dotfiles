@@ -31,7 +31,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		keys = {
-			--			{ '<leader>gtb', function() require('gitsigns').toggle_current_line_blame() end, desc = "Toggle Blame" }
+			{ '<leader>gb', function() require('gitsigns').toggle_current_line_blame() end, desc = "Toggle Blame" }
 		},
 		config = function()
 			require('gitsigns').setup()
