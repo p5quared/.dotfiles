@@ -1,5 +1,5 @@
 -- TODO: Configure to lazy-load wherever possible.
-
+-- NOTE: The `keys` field AUTOMATICALLY sets the plugin to lazy-load. (on keypress)
 return {
 	{
 		"folke/neodev.nvim",
@@ -30,9 +30,9 @@ return {
 	"github/copilot.vim",
 	{
 		"lewis6991/gitsigns.nvim",
-		keys = {
-			{ '<leader>gb', function() require('gitsigns').toggle_current_line_blame() end, desc = "Toggle Blame" }
-		},
+		--			keys = {
+		--				{ '<leader>gb', function() require('gitsigns').toggle_current_line_blame end, desc = "Toggle Blame" }
+		--			},
 		config = function()
 			require('gitsigns').setup()
 		end,
