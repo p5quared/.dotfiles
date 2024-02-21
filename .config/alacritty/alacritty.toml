@@ -1,0 +1,23 @@
+import = [
+	"~/.dotfiles/.config/alacritty/themes/themes/meliora.toml",
+	"~/.dotfiles/.config/alacritty/fonts/Jetbrains.toml"
+]
+
+# shell = { program = "~/bin/zsh", args = [] }
+
+live_config_reload = true
+
+[window]
+decorations = "None"
+opacity = 1.0
+blur = false
+# startup_mode = "SimpleFullscreen" 
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+thickness = 0.2
+blink_interval = 100
+blink_timeout = 1
+
+[mouse]
+hide_when_typing = true

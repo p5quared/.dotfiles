@@ -1,0 +1,5 @@
+[font]
+size = 16
+normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular"}
+bold = { family = "JetBrainsMonoNL Nerd Font", style = "SemiBold"}
+italic = { family = "Victor Mono", style = "Italic"}
