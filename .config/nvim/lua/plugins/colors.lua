@@ -1,6 +1,7 @@
 return {
 	'rose-pine/neovim',
-	'arcticicestudio/nord-vim',
+	"edeneast/nightfox.nvim",
+	"sainnhe/everforest",
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",

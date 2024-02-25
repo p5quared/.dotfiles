@@ -15,6 +15,17 @@ return {
 		end,
 	},
 	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		keys = {
+			{ "<leader>xx", "<cmd>TroubleToggle<CR>",                          desc = "Trouble: Toggle" },
+			{ "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>",    desc = "Trouble: Workspace Diagnostics" },
+			{ "<leader>xd", "<cmd>TroubleToggle lsp_document_diagnostics<CR>", desc = "Trouble: Document Diagnostics" },
+			{ "<leader>xl", "<cmd>TroubleToggle loclist<CR>",                  desc = "Trouble: Location List" },
+			{ "<leader>xq", "<cmd>TroubleToggle quickfix<CR>",                 desc = "Trouble: Quickfix" },
+		},
+	},
+	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
@@ -67,7 +78,8 @@ return {
 			{
 				"<leader>re",
 				function() require('refactoring').refactor('Extract Function') end,
-				desc = "[R]efactor: [E]xtract to Function"
+				desc = "[R]efactor: [E]xtract to Function",
+				mode = "x",
 			},
 			{
 				"<leader>rf",
