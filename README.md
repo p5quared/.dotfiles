@@ -68,5 +68,3 @@ Along with some others that have snuck in here.
 ```
 # Gallery
 ![image](https://github.com/p5quared/.dotfiles/assets/98245483/8fdc77e1-c439-4f43-b194-3c9439c69ac4)
-
-![Yabai Image](misc/Yabai.png)
