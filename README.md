@@ -1,6 +1,7 @@
 # ~.dotfiles/
 Welcome to my dotfiles repository.
 ![image](https://github.com/p5quared/.dotfiles/assets/98245483/fdbac9fd-2743-4649-8b6e-a4f7e478f8b3)
+![image](https://github.com/p5quared/.dotfiles/assets/98245483/8fdc77e1-c439-4f43-b194-3c9439c69ac4)
 
 
 ## Background
@@ -24,47 +25,51 @@ Along with some others that have snuck in here.
 ``` bash
 .
 ├── .config
+│   ├── .gitignore
 │   ├── alacritty
-│   │   └── alacritty.yml
-│   ├── fish
-│   │   ├── completions
-│   │   ├── conf.d
-│   │   ├── config.fish
-│   │   ├── fish_variables
-│   │   └── functions
+│   │   ├── alacritty.toml
+│   │   └── fonts
+│   │       ├── Caskaydia.toml
+│   │       └── Jetbrains.toml
 │   ├── gh
 │   │   ├── config.yml
 │   │   └── hosts.yml
-│   ├── github-copilot
-│   │   └── versions.json
-│   ├── kitty
-│   │   └── kitty.conf
+│   ├── neofetch
+│   │   └── config.conf
 │   ├── nvim
-│   │   ├── after
-│   │   │   └── plugin
-│   │   │       ├── colors.lua
-│   │   │       ├── fugitive.lua
-│   │   │       ├── lsp.lua
-│   │   │       ├── lualine.lua
-│   │   │       ├── refactoring.lua
-│   │   │       ├── remaps.lua
-│   │   │       ├── telescope.lua
-│   │   │       ├── treesitter.lua
-│   │   │       └── undotree.lua
+│   │   ├── .luarc.json
 │   │   ├── init.lua
-│   │   ├── lua
-│   │   │   └── p5quared
-│   │   │       ├── init.lua
-│   │   │       ├── packer.lua
-│   │   │       └── set.lua
-│   │   └── plugin
-│   │       └── packer_compiled.lua
+│   │   ├── lazy-lock.json
+│   │   └── lua
+│   │       ├── config
+│   │       │   ├── colorpick.lua
+│   │       │   ├── lazy.lua
+│   │       │   ├── remaps.lua
+│   │       │   └── set.lua
+│   │       └── plugins
+│   │           ├── colors.lua
+│   │           ├── init.lua
+│   │           ├── lsp.lua
+│   │           ├── lualine.lua
+│   │           ├── netrw.lua
+│   │           ├── noice.lua
+│   │           └── treesitter.lua
+│   ├── sanity
+│   │   └── config.json
 │   ├── skhd
 │   │   └── skhdrc
+│   ├── snaplet
+│   │   ├── system-manifest.json
+│   │   └── system.json
 │   └── yabai
 │       └── yabairc
+├── .gitignore
 ├── .zshrc
-└── README.md
+├── README.md
+├── brewls.txt
+└── misc
+    ├── LaTeX.png
+    ├── Neovim.png
+    ├── Yabai.png
+    └── hero.png
 ```
-# Gallery
-![image](https://github.com/p5quared/.dotfiles/assets/98245483/8fdc77e1-c439-4f43-b194-3c9439c69ac4)
