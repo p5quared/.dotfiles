@@ -1,6 +1,7 @@
 # ~.dotfiles/
 Welcome to my dotfiles repository.
-![Hero](misc/hero.png)
+![image](https://github.com/p5quared/.dotfiles/assets/98245483/fdbac9fd-2743-4649-8b6e-a4f7e478f8b3)
+
 
 ## Background
 The other day I accidentally broke my MBP (broke login).
@@ -66,5 +67,6 @@ Along with some others that have snuck in here.
 └── README.md
 ```
 # Gallery
-![LaTeX](misc/LaTeX.png)
+![image](https://github.com/p5quared/.dotfiles/assets/98245483/8fdc77e1-c439-4f43-b194-3c9439c69ac4)
+
 ![Yabai Image](misc/Yabai.png)
