@@ -1,1 +1,5 @@
 .config/nvim/plugin/packer_compiled.lua
+.DS_STORE
+.config/snaplet
+.config/github-copilot
+.config/exercism

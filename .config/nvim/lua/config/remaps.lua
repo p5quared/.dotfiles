@@ -32,7 +32,7 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- gitsigns
 local gs = package.loaded.gitsigns
-vim.keymap.set("n", "<leader>gb", function() gs.toggle_current_line_blame() end, { desc = "[G]it [B]lame" })
+vim.keymap.set("n", "<leader>gb", function() gs.toggle_current_line_blame() end, { desc = "Toggle Inline [G]it [B]lame" })
 vim.keymap.set("n", "<leader>ghp", function() gs.preview_hunk_inline() end, { desc = "[G]it [H]unk [P]review (Inline)" })
 vim.keymap.set("n", "<leader>ghP", function() gs.preview_hunk() end, { desc = "[G]it [H]unk [P]review" })
 

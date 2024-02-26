@@ -1,10 +1,20 @@
 return {
+	"shaunsingh/nord.nvim",
 	'rose-pine/neovim',
 	"edeneast/nightfox.nvim",
 	"sainnhe/everforest",
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",
+	"matsuuu/pinkmare",
+	"sam4llis/nvim-tundra",
+	{ 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
+	-- Lazy
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+	},
+
 	{
 		'ramojus/mellifluous.nvim',
 		opts = {
@@ -33,6 +43,7 @@ return {
 			'css',
 			'javascript',
 			'lua',
+			'go',
 			html = {
 				mode = 'foreground',
 			}

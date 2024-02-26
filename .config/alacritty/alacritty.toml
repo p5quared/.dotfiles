@@ -1,6 +1,6 @@
 import = [
 	"~/.dotfiles/.config/alacritty/themes/themes/meliora.toml",
-	"~/.dotfiles/.config/alacritty/fonts/Jetbrains.toml"
+	"~/.dotfiles/.config/alacritty/fonts/JetBrains.toml"
 ]
 
 # shell = { program = "~/bin/zsh", args = [] }

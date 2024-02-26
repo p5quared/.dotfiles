@@ -15,7 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+# ZSH_THEME="random"
+ZSH_THEME="re5et"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,8 +106,10 @@ eval "$(zoxide init zsh)"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias 341="nvim scp://timberlake//home/csdue/petervai/341/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -122,6 +125,8 @@ esac
 # pnpm end
 #
 export PATH="$(go env GOPATH)/bin:$PATH"
+
+export GITHUB_TOKEN="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"
 
 # opam configuration
 [[ ! -r /Users/petervaiciulis/.opam/opam-init/init.zsh ]] || source /Users/petervaiciulis/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

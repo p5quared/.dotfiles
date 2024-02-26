@@ -42,7 +42,7 @@ return {
 
 		lsp.new_server({
 			name = 'mipspls',
-			cmd = { 'lsp_scratch' },
+			cmd = { 'mipspls' },
 			filetypes = { '.s', '.mips', '.asm', 'asm', 's', 'mips' },
 			root_dir = function()
 				return lsp.dir.find_first({ '.mipsproj', 'mipsproj' })
