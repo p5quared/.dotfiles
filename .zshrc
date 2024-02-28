@@ -126,7 +126,6 @@ esac
 #
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-export GITHUB_TOKEN="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"
 
 # opam configuration
 [[ ! -r /Users/petervaiciulis/.opam/opam-init/init.zsh ]] || source /Users/petervaiciulis/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
