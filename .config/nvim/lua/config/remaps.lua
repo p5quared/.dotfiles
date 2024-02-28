@@ -45,3 +45,13 @@ vim.keymap.set('v', '<leader>fs', tb.grep_string, { desc = "[F]ind [S]election" 
 vim.keymap.set('n', '<leader>fb', tb.buffers, { desc = "[F]ind [B]uffers" })
 vim.keymap.set('n', '<leader>fc', tb.colorscheme, { desc = "[F]ind [C]olorscheme" })
 vim.keymap.set('n', '<leader>fk', tb.keymaps, { desc = "[F]ind [K]eymaps" })
+
+vim.keymap.set("n", "<leader>nd", function()
+	require('noice').cmd('dismiss')
+end
+, { desc = "[N]oice [D]ismiss" })
+
+vim.keymap.set("n", "<leader>nl", function()
+	require('noice').cmd('last')
+end
+, { desc = "[N]oice [L]ast" })
