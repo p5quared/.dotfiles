@@ -3,7 +3,7 @@
 return {
 	{
 		"folke/neodev.nvim",
-		config = {}
+		config = true,
 	},
 	{
 		"folke/which-key.nvim",
@@ -26,6 +26,16 @@ return {
 		},
 	},
 	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+		keys = {
+			{ "<leader>pm", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown: Preview" },
+		},
+	},
+
+	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
@@ -44,9 +54,7 @@ return {
 		--			keys = {
 		--				{ '<leader>gb', function() require('gitsigns').toggle_current_line_blame end, desc = "Toggle Blame" }
 		--			},
-		config = function()
-			require('gitsigns').setup()
-		end,
+		config = true,
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -108,8 +116,6 @@ return {
 				mode = { "n", "x" },
 			},
 		},
-		config = function()
-			require("refactoring").setup()
-		end,
+		config = true,
 	}
 }
