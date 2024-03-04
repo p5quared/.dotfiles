@@ -26,12 +26,21 @@ return {
 		},
 	},
 	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
+		config = true,
+		keys = {
+			{ "<leader>tt", "<cmd>TodoTelescope<CR>", desc = "Todo: Telescope" },
+			{ "<leader>td", "<cmd>TodoTrouble<CR>",   desc = "Todo: Trouble" },
+		},
+	},
+	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
 		keys = {
-			{ "<leader>pm", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown: Preview" },
+			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown: Preview" },
 		},
 	},
 
@@ -117,5 +126,16 @@ return {
 			},
 		},
 		config = true,
-	}
+	},
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = { -- Example mapping to toggle outline
+			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+		},
+		opts = {
+			-- Your setup opts here
+		},
+	},
 }
