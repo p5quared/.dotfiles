@@ -117,6 +117,7 @@ alias 341="nvim scp://timberlake//home/csdue/petervai/341/"
 # source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # pnpm
+export GPG_TTY=$(tty)
 export PNPM_HOME="/Users/petervaiciulis/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
@@ -130,4 +131,3 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # opam configuration
 [[ ! -r /Users/petervaiciulis/.opam/opam-init/init.zsh ]] || source /Users/petervaiciulis/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-export GPG_TTY=$(tty)
