@@ -5,6 +5,8 @@ vim.keymap.set("n", "<leader>p", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set({ "v", "x" }, "Y", '"*y')
+
 -- Copilot yuk
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
@@ -46,12 +48,6 @@ vim.keymap.set('n', '<leader>fb', tb.buffers, { desc = "[F]ind [B]uffers" })
 vim.keymap.set('n', '<leader>fc', tb.colorscheme, { desc = "[F]ind [C]olorscheme" })
 vim.keymap.set('n', '<leader>fk', tb.keymaps, { desc = "[F]ind [K]eymaps" })
 
-vim.keymap.set("n", "<leader>nd", function()
-	require('noice').cmd('dismiss')
-end
-, { desc = "[N]oice [D]ismiss" })
-
-vim.keymap.set("n", "<leader>nl", function()
-	require('noice').cmd('last')
-end
-, { desc = "[N]oice [L]ast" })
+local noice = require('noice')
+vim.keymap.set("n", "<leader>nd", function() noice.cmd('dismiss') end, { desc = "[N]oice [D]ismiss" })
+vim.keymap.set("n", "<leader>nl", function() noice.cmd('last') end, { desc = "[N]oice [L]ast" })
