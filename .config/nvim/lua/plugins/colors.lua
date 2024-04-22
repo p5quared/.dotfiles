@@ -8,6 +8,7 @@ return {
 	"rebelot/kanagawa.nvim",
 	"matsuuu/pinkmare",
 	"sam4llis/nvim-tundra",
+	"yorik1984/newpaper.nvim",
 	{ 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
 	-- Lazy
 	{
