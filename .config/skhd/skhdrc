@@ -1,5 +1,5 @@
 # Launch Applications
-cmd - return : open -n -a "Alacritty"
+# cmd - return : open -n -a "Alacritty"
 
 # -- Yabai -- #
 # Focus window in space (relative)
