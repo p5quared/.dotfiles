@@ -3,6 +3,7 @@
 -- Credit: glepnir
 
 -- Color table for highlights
+
 local colors = {
 	bg       = '#202328',
 	fg       = '#bbc2cf',
@@ -184,7 +185,7 @@ ins_left {
 
 ins_right {
 	'branch',
-	icon = 'b ',
+	icon = "",
 	color = { fg = colors.violet, gui = 'bold' },
 }
 
