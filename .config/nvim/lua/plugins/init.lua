@@ -15,6 +15,57 @@ return {
 		end,
 	},
 	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"rcarriga/nvim-dap-ui",
+			"theHamsta/nvim-dap-virtual-text",
+			"leoluz/nvim-dap-go",
+			"Weissle/persistent-breakpoints.nvim",
+		},
+		config = function()
+			local dap = require("dap")
+
+			-- Setup the go debug adapter
+			require("dap-go").setup()
+
+			-- Setup DAP virtual text
+			require("nvim-dap-virtual-text").setup({})
+			vim.g.dap_virtual_text = true
+
+			-- Allows breakpoints to last between sessions
+			require("persistent-breakpoints").setup({
+				load_breakpoints_event = { "BufReadPost" },
+			})
+
+			-- Setup DAP UI
+			local dapui = require("dapui")
+			dapui.setup()
+
+			-- Automatically open the DAP UI when the debugging session begins
+			dap.listeners.before.attach.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				dapui.close()
+			end
+
+			-- Adding symbols for breakpoints and such
+			vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
+			vim.fn.sign_define("DapStopped", { text = "→", texthl = "", linehl = "", numhl = "" })
+
+			-- Keymaps for debugging
+			vim.keymap.set("n", "<leader>db", require("persistent-breakpoints.api").toggle_breakpoint)
+			vim.keymap.set("n", "<leader>du", dapui.toggle)
+		end,
+	},
+	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
@@ -29,10 +80,6 @@ return {
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
 		config = true,
-		keys = {
-			{ "<leader>tt", "<cmd>TodoTelescope<CR>", desc = "Todo: Telescope" },
-			{ "<leader>td", "<cmd>TodoTrouble<CR>",   desc = "Todo: Trouble" },
-		},
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -83,7 +130,6 @@ return {
 		init = function()
 			require('leap').create_default_mappings()
 		end,
-
 	},
 	{
 		"ThePrimeagen/refactoring.nvim",
