@@ -66,6 +66,19 @@ return {
 		end,
 	},
 	{
+		'stevearc/oil.nvim',
+		opts = {
+			float = {
+				padding = 8,
+			}
+		},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		'nvim-pack/nvim-spectre'
+	},
+	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
@@ -172,6 +185,10 @@ return {
 			},
 		},
 		config = true,
+	},
+	{
+		"NoahTheDuke/vim-just",
+		ft = { "just" },
 	},
 	{
 		"hedyhli/outline.nvim",
