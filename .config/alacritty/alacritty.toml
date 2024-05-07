@@ -1,6 +1,6 @@
 import = [
 	"~/.dotfiles/.config/alacritty/themes/themes/meliora.toml",
-	"~/.dotfiles/.config/alacritty/fonts/JetBrains.toml"
+	"~/.dotfiles/.config/alacritty/fonts/Fantasque.toml"
 ]
 
 # shell = { program = "~/bin/zsh", args = [] }
@@ -11,6 +11,7 @@ live_config_reload = true
 decorations = "None"
 opacity = 1.0
 blur = false
+option_as_alt = "Both"
 # startup_mode = "SimpleFullscreen" 
 
 [cursor]

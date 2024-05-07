@@ -1,0 +1,6 @@
+[font]
+size = 20
+offset = { x = 0, y = 4 }
+normal = { family = "FantasqueSansM Nerd Font Mono", style = "Regular"}
+bold = { family = "FantasqueSansM Nerd Font Mono", style = "Bold"}
+italic = { family = "Victor Mono", style = "Italic"}

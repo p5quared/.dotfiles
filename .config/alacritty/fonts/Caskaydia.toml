@@ -1,5 +1,5 @@
 [font]
-size = 16
+size = 18
 normal = { family = "CaskaydiaCove Nerd Font Mono", style = "Regular"}
 bold = { family = "CaskaydiaCove Nerd Font Mono", style = "SemiBold"}
 italic = { family = "Victor Mono", style = "Italic"}
