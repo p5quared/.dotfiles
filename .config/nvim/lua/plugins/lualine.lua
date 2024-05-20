@@ -14,7 +14,7 @@ local config = {
 		lualine_x = {},
 		lualine_y = { 'branch', 'diff' },
 		lualine_z = {
-			{ 'datetime', style = "%H:%M", separator = { right = '' }, left_padding = 2 },
+			{ 'datetime', style = "%a %H:%M%p", separator = { right = '' }, left_padding = 2 },
 		},
 	},
 	inactive_sections = {
@@ -23,10 +23,13 @@ local config = {
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { 'location' },
+		lualine_z = {},
 	},
-	tabline = {},
-	extensions = { 'trouble', 'nvim-dap-ui', 'mason' },
+	tabline = {
+	},
+	winbar = {
+	},
+	extensions = { 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
 }
 
 return {

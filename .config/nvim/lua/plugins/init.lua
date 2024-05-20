@@ -14,6 +14,7 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 	},
+	{ 'wakatime/vim-wakatime', lazy = false },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -70,10 +71,30 @@ return {
 		opts = {
 			float = {
 				padding = 8,
+			},
+			view_options = {
+				show_hidden = true,
 			}
 		},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = true,
+		init = function()
+			local harpoon = require("harpoon")
+
+			vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+			vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+			vim.keymap.set("n", "<C-1>", function() harpoon:list():select(1) end)
+			vim.keymap.set("n", "<C-2>", function() harpoon:list():select(2) end)
+			vim.keymap.set("n", "<C-3>", function() harpoon:list():select(3) end)
+			vim.keymap.set("n", "<C-4>", function() harpoon:list():select(4) end)
+		end
 	},
 	{
 		'nvim-pack/nvim-spectre'
@@ -185,6 +206,35 @@ return {
 			},
 		},
 		config = true,
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			indent = {
+				char = {
+					"",
+					"▏", -- This is a slightly thinner char than the default one, check :help ibl.config.indent.char
+					"▏",
+					"▏",
+					"▏",
+					"▏",
+					"▏",
+				},
+				smart_indent_cap = true,
+			},
+			scope = {
+				show_start = false,
+				show_end = false,
+			},
+		}
+	},
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		opts = {
+			-- add any custom options here
+		}
 	},
 	{
 		"NoahTheDuke/vim-just",
