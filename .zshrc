@@ -16,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="random"
-ZSH_THEME="re5et"
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +78,7 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,3 +131,9 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # opam configuration
 [[ ! -r /Users/petervaiciulis/.opam/opam-init/init.zsh ]] || source /Users/petervaiciulis/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+PATH=$PATH:$HOME/bin
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
