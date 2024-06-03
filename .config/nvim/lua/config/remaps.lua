@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 -- disabled while we use oil
 -- vim.keymap.set("n", "<leader>p", vim.cmd.Ex)
+vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, { desc = "[G]oto [T]ype Definition" })
+
 
 -- Move selection
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -91,3 +93,14 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
+local ls = require('luasnip')
+vim.keymap.set("i", "<C-L>", function() ls.jump(1) end)
+vim.keymap.set("i", "<C-H>", function() ls.jump(-1) end)
+
+
+-- restore the session for the current directory
+vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
+
+-- restore the last session
+vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
