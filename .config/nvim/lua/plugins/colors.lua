@@ -9,6 +9,16 @@ return {
 	"matsuuu/pinkmare",
 	"sam4llis/nvim-tundra",
 	"yorik1984/newpaper.nvim",
+	"fynnfluegge/monet.nvim",
+	'olivercederborg/poimandres.nvim',
+	{
+		"dgox16/oldworld.nvim",
+		opts = {
+			styles = {
+				comments = { italic = true }
+			}
+		}
+	},
 	{ 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
 	-- Lazy
 	{
@@ -24,7 +34,6 @@ return {
 			styles = {
 				comments = { italic = true },
 				keywords = { bold = true },
-				types = { italic = true },
 			},
 		}
 	},
