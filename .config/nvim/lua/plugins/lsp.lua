@@ -62,6 +62,7 @@ return {
 				['gopls'] = { 'go' },
 				['asmfmt'] = { 'asm', 's' }, -- don't work
 				['ocamlformat'] = { 'ocaml' },
+				['terraformls'] = { 'terraform' }
 			}
 		})
 
