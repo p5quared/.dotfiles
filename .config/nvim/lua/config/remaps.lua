@@ -1,4 +1,9 @@
 vim.g.mapleader = " "
+
+vim.keymap.set("n", "<leader>e", ":wqa<CR>", { desc = "Exit (and save)" })
+vim.keymap.set("n", "<leader>c", ":q<CR>", { desc = "Close" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
+
 -- disabled while we use oil
 -- vim.keymap.set("n", "<leader>p", vim.cmd.Ex)
 vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, { desc = "[G]oto [T]ype Definition" })
