@@ -67,6 +67,20 @@ return {
 		end,
 	},
 	{
+		"rest-nvim/rest.nvim",
+		ft = "http",
+		dependencies = { "luarocks.nvim" },
+		config = function()
+			require("rest-nvim").setup()
+		end,
+		keys = {
+			{ "<leader>rr", "<cmd>Rest run<cr>",      desc = "Rest: Run under cursor" },
+			{ "<leader>rl", "<cmd>Rest run last<cr>", desc = "Rest: Repeat Last Request" },
+		},
+		opts = { skip_ssl_verification = true },
+
+	},
+	{
 		'stevearc/oil.nvim',
 		opts = {
 			float = {
