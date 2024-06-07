@@ -18,7 +18,15 @@ return {
 		{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 		-- Autocompletion
-		{ 'hrsh7th/nvim-cmp' }, -- Required
+		{
+			'hrsh7th/nvim-cmp',
+			dependencies = {
+				{
+					"zbirenbaum/copilot-cmp",
+					opts = {},
+				},
+			}
+		},                    -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 		{ 'L3MON4D3/LuaSnip' }, -- Required
 		{ 'hrsh7th/cmp-cmdline' },
@@ -78,14 +86,18 @@ return {
 
 		local cmp = require('cmp')
 		local lspkind = require('lspkind')
+		lspkind.init({
+			symbol_map = { Copilot = "" }
+		})
+		--TODO: Doesn't work
+		--vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 		local cmp_action = lsp_zero.cmp_action()
 		cmp.setup({
 
 			sources = cmp.config.sources({
-				{
-					{ name = 'nvim_lsp' },
-				},
+				{ name = 'nvim_lsp' },
+				{ name = 'copilot' },
 				{ name = 'path' },
 				{ name = 'luasnip' },
 				{ name = 'buffer' },

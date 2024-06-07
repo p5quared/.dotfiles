@@ -14,11 +14,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set({ "v", "x" }, "Y", '"*y')
 
--- Copilot yuk
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-
 -- Space creation
 vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>l")
 vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>j")

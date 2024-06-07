@@ -152,7 +152,16 @@ return {
 			require('luasnip/loaders/from_vscode').lazy_load()
 		end
 	},
-	"github/copilot.vim",
+	{
+		"zbirenbaum/copilot.lua",
+		enabled = true,
+		cmd = "Copilot",
+		event = "InsertEnter",
+		opts = {
+			suggestions = { enabled = false },
+			panel = { enabled = false },
+		},
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		--			keys = {
