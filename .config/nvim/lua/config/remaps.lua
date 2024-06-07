@@ -68,7 +68,7 @@ vim.keymap.set('n', "<leader>ds", function() dap.step_into() end, { desc = "[D]e
 vim.keymap.set('n', "<leader>dr", function() dap.repl.open() end, { desc = "[D]ebug [R]epl" })
 
 vim.keymap.set('n', "<leader>dt", function() gdap.debug_test() end, { desc = "[D]ebug [T]est" })
-vim.keymap.set('n', "<leader>da", function() gdap.debug_last_test() end, { desc = "[D]ebug Test [A]gain" })
+-- vim.keymap.set('n', "<leader>da", function() gdap.debug_last_test() end, { desc = "[D]ebug Test [A]gain" })
 
 
 -- Todo-Comments
@@ -94,7 +94,4 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
 -- restore the session for the current directory
-vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
-
--- restore the last session
-vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
+vim.api.nvim_set_keymap("n", "<leader>`", [[<cmd>lua require("persistence").load()<cr>]], {})
