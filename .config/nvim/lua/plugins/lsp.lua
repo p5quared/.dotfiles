@@ -1,7 +1,7 @@
 return {
 	'VonHeikemen/lsp-zero.nvim',
 	lazy = true,
-	branch = 'v2.x',
+	branch = 'v3.x',
 	dependencies = {
 		-- LSP Support
 		{ 'folke/neodev.nvim' },
