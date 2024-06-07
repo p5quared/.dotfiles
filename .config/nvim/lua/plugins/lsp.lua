@@ -13,6 +13,7 @@ return {
 				---@diagnostic disable-next-line: param-type-mismatch
 				pcall(vim.cmd, 'MasonUpdate')
 			end,
+			config = true,
 		},
 		{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
@@ -27,12 +28,12 @@ return {
 		{ 'saadparwaiz1/cmp_luasnip' }
 	},
 	init = function()
-		local lsp = require('lsp-zero')
+		local lsp_zero = require('lsp-zero')
 
-		lsp.preset("recommended")
+		lsp_zero.preset("recommended")
 
-		lsp.on_attach(function(_, bufnr)
-			lsp.default_keymaps({ buffer = bufnr })
+		lsp_zero.on_attach(function(_, bufnr)
+			lsp_zero.default_keymaps({ buffer = bufnr })
 
 			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', { buffer = bufnr })
 			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { buffer = bufnr })
@@ -40,17 +41,7 @@ return {
 		end)
 
 
-		lsp.new_server({
-			name = 'mipspls',
-			cmd = { 'mipspls' },
-			filetypes = { '.s', '.mips', '.asm', 'asm', 's', 'mips' },
-			root_dir = function()
-				return lsp.dir.find_first({ '.mipsproj', 'mipsproj' })
-			end,
-		})
-
-
-		lsp.format_on_save({
+		lsp_zero.format_on_save({
 			format_opts = {
 				async = true,
 				timeout_ms = 10000
@@ -66,21 +57,43 @@ return {
 			}
 		})
 
-		lsp.set_sign_icons({
+		lsp_zero.set_sign_icons({
 			error = '✘',
 			warn = '▲',
 			hint = '⚑',
 			info = '»'
 		})
 
-		lsp.setup()
+		require('mason-lspconfig').setup({
+			handlers = {
+				function(server_name)
+					require('lspconfig')[server_name].setup({})
+				end,
+				lua_ls = function()
+					local lua_opts = lsp_zero.nvim_lua_ls()
+					require('lspconfig').lua_ls.setup(lua_opts)
+				end,
+			}
+		})
+
 		local cmp = require('cmp')
 		local lspkind = require('lspkind')
 
+		local cmp_action = lsp_zero.cmp_action()
 		cmp.setup({
+
+			sources = cmp.config.sources({
+				{
+					{ name = 'nvim_lsp' },
+				},
+				{ name = 'path' },
+				{ name = 'luasnip' },
+				{ name = 'buffer' },
+			}),
+
 			window = {
-				--completion = cmp.config.window.bordered(),
-				--				documentation = cmp.config.window.bordered()
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
 			},
 			snippet = {
 				expand = function(args)
@@ -88,14 +101,18 @@ return {
 				end,
 			},
 			mapping = {
-				['<CR>'] = cmp.mapping.confirm({
+				['<Enter>'] = cmp.mapping.confirm({
 					-- documentation says this is important.
 					-- I don't know why.
 					behavior = cmp.ConfirmBehavior.Replace,
 					-- TODO: Evaluate whether we really should
 					-- be selecting automatically
 					select = true,
-				})
+				}),
+				['<C-n'] = cmp_action.luasnip_jump_forward(),
+				['<C-p'] = cmp_action.luasnip_jump_backward(),
+				['<C-u'] = cmp.mapping.scroll_docs(4),
+				['<C-d'] = cmp.mapping.scroll_docs(-4),
 			},
 			formatting = {
 				expandable_indicator = true,
@@ -106,12 +123,6 @@ return {
 					show_labelDetails = true,
 				})
 			},
-			sources = cmp.config.sources({
-				{ name = 'luasnip' },
-				{ name = 'nvim_lsp' },
-			}, {
-				{ name = 'buffer' },
-			})
 		})
 
 
