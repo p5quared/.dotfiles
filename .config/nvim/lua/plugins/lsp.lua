@@ -125,6 +125,8 @@ return {
 				['<C-p'] = cmp_action.luasnip_jump_backward(),
 				['<C-u'] = cmp.mapping.scroll_docs(4),
 				['<C-d'] = cmp.mapping.scroll_docs(-4),
+				['<Tab>'] = cmp_action.luasnip_supertab(),
+				['<S-Tab>'] = cmp_action.luasnip_shift_supertab()
 			},
 			formatting = {
 				expandable_indicator = true,
