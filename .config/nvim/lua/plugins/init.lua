@@ -70,9 +70,7 @@ return {
 		"rest-nvim/rest.nvim",
 		ft = "http",
 		dependencies = { "luarocks.nvim" },
-		config = function()
-			require("rest-nvim").setup()
-		end,
+		config = true,
 		keys = {
 			{ "<leader>rr", "<cmd>Rest run<cr>",      desc = "Rest: Run under cursor" },
 			{ "<leader>rl", "<cmd>Rest run last<cr>", desc = "Rest: Repeat Last Request" },
@@ -84,7 +82,7 @@ return {
 		'stevearc/oil.nvim',
 		opts = {
 			float = {
-				padding = 8,
+				padding = 4,
 			},
 			view_options = {
 				show_hidden = true,
@@ -92,6 +90,11 @@ return {
 		},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		'echasnovski/mini.pairs',
+		version = false,
+		config = true,
 	},
 	{
 		"ThePrimeagen/harpoon",
