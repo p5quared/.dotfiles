@@ -25,4 +25,4 @@ yabai -m config left_padding 0
 yabai -m config right_padding 0
 
 # modify window shadows (default: on, options: on, off, float)
-yabai -m config window_shadow on
+yabai -m config window_shadow off
