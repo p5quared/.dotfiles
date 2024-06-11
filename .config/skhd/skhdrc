@@ -1,5 +1,5 @@
 # Launch Applications
-# cmd - return : open -n -a "Alacritty"
+ctrl - return : open -n -a "Alacritty"
 
 # -- Yabai -- #
 # Focus window in space (relative)
@@ -10,14 +10,14 @@ hyper - l : yabai -m window --focus east
 
 # Move focus between space (objective)
 # Right Monitor
-hyper - 6 : yabai -m space --focus 1
-hyper - 7 : yabai -m space --focus 2
-hyper - 8 : yabai -m space --focus 3
-hyper - 9 : yabai -m space --focus 4
+hyper - 1 : yabai -m space --focus 1
+hyper - 2 : yabai -m space --focus 2
+hyper - 3 : yabai -m space --focus 3
+hyper - 4 : yabai -m space --focus 4
 # Left Monitor
-hyper - 1 : yabai -m space --focus 5
-hyper - 2 : yabai -m space --focus 6
-hyper - 3 : yabai -m space --focus 7
+hyper - 5 : yabai -m space --focus 5
+hyper - 6 : yabai -m space --focus 6
+hyper - 7 : yabai -m space --focus 7
 
 # Ending loops around
 hyper - p : yabai -m space --focus next || yabai -m space --focus first
