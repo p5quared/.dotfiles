@@ -38,12 +38,12 @@ return {
 	init = function()
 		local lsp_zero = require('lsp-zero')
 
-		lsp_zero.preset("recommended")
-
 		lsp_zero.on_attach(function(_, bufnr)
-			lsp_zero.default_keymaps({ buffer = bufnr })
+			lsp_zero.default_keymaps({
+				buffer = bufnr,
+				preserve_mappings = false,
+			})
 
-			vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', { buffer = bufnr })
 			vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { buffer = bufnr })
 			vim.keymap.set("n", "<leader>da", function() vim.lsp.buf.code_action() end, opts)
 		end)
