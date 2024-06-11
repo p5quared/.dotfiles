@@ -165,22 +165,6 @@ return {
 			panel = { enabled = false },
 		},
 	},
-	{
-		"lewis6991/gitsigns.nvim",
-		--			keys = {
-		--				{ '<leader>gb', function() require('gitsigns').toggle_current_line_blame end, desc = "Toggle Blame" }
-		--			},
-		config = true,
-	},
-	{
-		"kdheepak/lazygit.nvim",
-		keys = {
-			{ "<leader>gg", "<cmd>LazyGit<CR>", desc = "Open LazyGit" }
-		},
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
 	'lervag/vimtex',
 	{
 		'ggandor/leap.nvim',
