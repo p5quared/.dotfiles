@@ -74,12 +74,24 @@ return {
 
 		require('mason-lspconfig').setup({
 			handlers = {
-				function(server_name)
-					require('lspconfig')[server_name].setup({})
-				end,
 				lua_ls = function()
 					local lua_opts = lsp_zero.nvim_lua_ls()
 					require('lspconfig').lua_ls.setup(lua_opts)
+				end,
+				basedpyright = function()
+					require('lspconfig').basedpyright.setup({
+						settings = {
+							basedpyright = {
+								analysis = {
+									-- "off", "baasic", "standard", "strict", "all"
+									typeCheckingMode = "standard",
+								},
+							}
+						}
+					})
+				end,
+				function(server_name)
+					require('lspconfig')[server_name].setup({})
 				end,
 			}
 		})
