@@ -11,6 +11,7 @@ return {
 	"yorik1984/newpaper.nvim",
 	"fynnfluegge/monet.nvim",
 	'olivercederborg/poimandres.nvim',
+	"scottmckendry/cyberdream.nvim",
 	{
 		"dgox16/oldworld.nvim",
 		opts = {
