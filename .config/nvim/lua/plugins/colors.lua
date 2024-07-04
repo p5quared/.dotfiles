@@ -11,7 +11,15 @@ return {
 	"yorik1984/newpaper.nvim",
 	"fynnfluegge/monet.nvim",
 	'olivercederborg/poimandres.nvim',
-	"scottmckendry/cyberdream.nvim",
+	'liuchengxu/space-vim-theme',
+	{
+		"scottmckendry/cyberdream.nvim",
+		opts = {
+			transparent = true,
+
+		}
+	},
+
 	{
 		"dgox16/oldworld.nvim",
 		opts = {
