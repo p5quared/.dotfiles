@@ -75,21 +75,6 @@ vim.keymap.set('n', "<leader>dt", function() gdap.debug_test() end, { desc = "[D
 vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
 vim.keymap.set('n', "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todo: Trouble" })
 
-
--- Spectre
-vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
-	desc = "[S]pectre"
-})
-vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-	desc = "[S]pectre [W]ord"
-})
-vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-	desc = "[S]pectre [W]ord (visual)"
-})
-vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-	desc = "[S]pectre [P]roject (file)"
-})
-
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 

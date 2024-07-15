@@ -7,6 +7,8 @@ return {
 			'nvim-tree/nvim-web-devicons',
 		},
 		config = true,
+		cmd = "Octo",
+		event = { { event = "BufReadCmd", pattern = "octo://*" } },
 	},
 	{
 		"kdheepak/lazygit.nvim",

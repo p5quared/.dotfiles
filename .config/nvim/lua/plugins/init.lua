@@ -65,18 +65,6 @@ return {
 		end,
 	},
 	{
-		"rest-nvim/rest.nvim",
-		ft = "http",
-		dependencies = { "luarocks.nvim" },
-		config = true,
-		keys = {
-			{ "<leader>rr", "<cmd>Rest run<cr>",      desc = "Rest: Run under cursor" },
-			{ "<leader>rl", "<cmd>Rest run last<cr>", desc = "Rest: Repeat Last Request" },
-		},
-		opts = { skip_ssl_verification = true },
-
-	},
-	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {

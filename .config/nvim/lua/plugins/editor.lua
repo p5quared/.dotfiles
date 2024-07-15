@@ -35,7 +35,13 @@ return {
 		},
 	},
 	{
-		'nvim-pack/nvim-spectre'
+		'nvim-pack/nvim-spectre',
+		keys = {
+			{ '<leader>S',  '<cmd>lua require("spectre").toggle()<CR>',                             desc = "[S]pectre" },
+			{ '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',      desc = "[S]pectre [W]ord" },
+			{ '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>',                   desc = "[S]pectre [W]ord (visual)" },
+			{ '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', desc = "[S]pectre [P]roject (file)" },
+		}
 	},
 	{
 		'nvim-telescope/telescope.nvim',

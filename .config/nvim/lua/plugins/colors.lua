@@ -1,25 +1,13 @@
 return {
-	"shaunsingh/nord.nvim",
 	'rose-pine/neovim',
 	"edeneast/nightfox.nvim",
-	"sainnhe/everforest",
 	"folke/tokyonight.nvim",
 	"catppuccin/nvim",
 	"rebelot/kanagawa.nvim",
-	"matsuuu/pinkmare",
-	"sam4llis/nvim-tundra",
 	"yorik1984/newpaper.nvim",
 	"fynnfluegge/monet.nvim",
-	'olivercederborg/poimandres.nvim',
 	'liuchengxu/space-vim-theme',
-	{
-		"scottmckendry/cyberdream.nvim",
-		opts = {
-			transparent = true,
-
-		}
-	},
-
+	'liuchengxu/space-vim-dark',
 	{
 		"dgox16/oldworld.nvim",
 		opts = {
@@ -29,12 +17,6 @@ return {
 		}
 	},
 	{ 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
-	-- Lazy
-	{
-		"olimorris/onedarkpro.nvim",
-		priority = 1000, -- Ensure it loads first
-	},
-
 	{
 		'ramojus/mellifluous.nvim',
 		opts = {
@@ -47,7 +29,6 @@ return {
 		}
 	},
 	'AlexvZyl/nordic.nvim',
-	"nyoom-engineering/oxocarbon.nvim",
 	{
 		"mcchrish/zenbones.nvim",
 		dependencies = {

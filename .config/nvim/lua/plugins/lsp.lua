@@ -28,7 +28,10 @@ return {
 			}
 		},                    -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-		{ 'L3MON4D3/LuaSnip' }, -- Required
+		{
+			'L3MON4D3/LuaSnip',
+			lazy = true,
+		}, -- Required
 		{ 'hrsh7th/cmp-cmdline' },
 		{ 'hrsh7th/cmp-path' },
 		{ 'hrsh7th/cmp-buffer' },
