@@ -12,7 +12,7 @@ local config = {
 			'%=', --[[ add your center compoentnts here in place of this comment ]]
 		},
 		lualine_x = {},
-		lualine_y = { 'branch', 'diff' },
+		lualine_y = { { 'branch', fmt = function(str) return str:sub(1, 40) end }, 'diff' },
 		lualine_z = {
 			{ 'datetime', style = "%a %H:%M%p", separator = { right = '' }, left_padding = 2 },
 		},
