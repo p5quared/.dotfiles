@@ -7,6 +7,7 @@ return {
 	"yorik1984/newpaper.nvim",
 	"fynnfluegge/monet.nvim",
 	'liuchengxu/space-vim-theme',
+	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 	'liuchengxu/space-vim-dark',
 	{
 		"dgox16/oldworld.nvim",
@@ -16,7 +17,7 @@ return {
 			}
 		}
 	},
-	{ 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
+	{ 'dasupradyumna/midnight.nvim',  lazy = false,   priority = 1000 },
 	{
 		'ramojus/mellifluous.nvim',
 		opts = {
