@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>e", ":wqa<CR>", { desc = "Exit (and save)" })
-vim.keymap.set("n", "<leader>c", ":q<CR>", { desc = "Close" })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Close" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 
 -- disabled while we use oil
