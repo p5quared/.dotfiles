@@ -1,5 +1,5 @@
 [font]
 size = 16
-normal = { family = "Maple Mono NF", style = "Regular"}
-bold = { family = "Maple Mono NF", style = "Regular"}
+normal = { family = "Maple Mono SC NF", style = "Regular"}
+bold = { family = "Maple Mono SC NF", style = "Regular"}
 italic = { family = "Monaspace Xenon", style = "Semibold"}
