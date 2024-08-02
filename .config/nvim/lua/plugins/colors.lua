@@ -6,8 +6,10 @@ return {
 	"rebelot/kanagawa.nvim",
 	"yorik1984/newpaper.nvim",
 	"fynnfluegge/monet.nvim",
+	'Mofiqul/vscode.nvim',
 	'liuchengxu/space-vim-theme',
 	{ "miikanissi/modus-themes.nvim", priority = 1000 },
+	'projekt0n/github-nvim-theme',
 	'liuchengxu/space-vim-dark',
 	{
 		"dgox16/oldworld.nvim",
@@ -43,11 +45,14 @@ return {
 		opts = {
 			'css',
 			'javascript',
+			'typescripts',
 			'lua',
 			'go',
+			'ts',
 			html = {
 				mode = 'foreground',
 			}
-		}
+		},
+		config = true,
 	}
 }
