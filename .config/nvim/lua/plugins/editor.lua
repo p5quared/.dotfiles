@@ -54,16 +54,6 @@ return {
 		config = true,
 	},
 	{
-		"zbirenbaum/copilot.lua",
-		enabled = true,
-		cmd = "Copilot",
-		event = "InsertEnter",
-		opts = {
-			suggestions = { enabled = false },
-			panel = { enabled = false },
-		},
-	},
-	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },

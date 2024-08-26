@@ -12,7 +12,6 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 	},
-	{ 'wakatime/vim-wakatime', lazy = false },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
