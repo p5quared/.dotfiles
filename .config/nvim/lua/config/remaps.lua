@@ -30,6 +30,7 @@ vim.keymap.set("n", "<C-down>", ":resize -2<CR>", { desc = "Resize -Vertical" })
 vim.keymap.set("n", "<C-left>", ":vertical resize +2<CR>", { desc = "Resize +Horizontal" })
 vim.keymap.set("n", "<C-right>", ":vertical resize -2<CR>", { desc = "Resize -Horizontal" })
 
+vim.keymap.set("n", "<leader>c", ":nohl<CR>", { desc = "No Highlight" })
 
 -- gitsigns
 local gs = package.loaded.gitsigns

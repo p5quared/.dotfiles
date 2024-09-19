@@ -22,14 +22,13 @@ return {
 	{ 'dasupradyumna/midnight.nvim',  lazy = false,   priority = 1000 },
 	{
 		'ramojus/mellifluous.nvim',
-		opts = {
-			color_set = 'mellifluous',
-
-			styles = {
-				comments = { italic = true },
-				keywords = { bold = true },
-			},
-		}
+		-- opts = {
+		-- 	styles = {
+		-- 		comments = { italic = true },
+		-- 		-- main_keywords = { bold = true },
+		-- 		-- other_keywords = { bold = true },
+		-- 	},
+		-- }
 	},
 	'AlexvZyl/nordic.nvim',
 	{
