@@ -2,3 +2,8 @@ sanity/
 nvim/plugin/*
 nvim/lazy-lock.json
 github-copilot/
+ada/
+brazil/
+cr/
+homebrew/credentials
+configstore/
