@@ -11,6 +11,7 @@ return {
 	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 	'projekt0n/github-nvim-theme',
 	'liuchengxu/space-vim-dark',
+	"vague2k/vague.nvim",
 	{
 		"dgox16/oldworld.nvim",
 		opts = {
