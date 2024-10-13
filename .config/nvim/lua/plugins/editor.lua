@@ -20,7 +20,10 @@ return {
 			'tpope/vim-repeat'
 		},
 		init = function()
-			require('leap').create_default_mappings()
+			vim.keymap.set('n', 's', '<Plug>(leap)')
+			vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
+			vim.keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)')
+			vim.keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 		end,
 	},
 	{
@@ -54,16 +57,6 @@ return {
 		config = true,
 	},
 	{
-		"zbirenbaum/copilot.lua",
-		enabled = true,
-		cmd = "Copilot",
-		event = "InsertEnter",
-		opts = {
-			suggestions = { enabled = false },
-			panel = { enabled = false },
-		},
-	},
-	{
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -79,6 +72,53 @@ return {
 			vim.keymap.set("n", "<C-3>", function() harpoon:list():select(3) end)
 			vim.keymap.set("n", "<C-4>", function() harpoon:list():select(4) end)
 		end
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		enabled = true,
+		cmd = "Copilot",
+		event = "InsertEnter",
+		opts = {
+			suggestions = { enabled = false },
+			panel = { enabled = false },
+		},
+	},
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
 	},
 	{
 		'L3MON4D3/LuaSnip',

@@ -11,6 +11,7 @@ return {
 	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 	'projekt0n/github-nvim-theme',
 	'liuchengxu/space-vim-dark',
+	"vague2k/vague.nvim",
 	{
 		"dgox16/oldworld.nvim",
 		opts = {
@@ -22,14 +23,13 @@ return {
 	{ 'dasupradyumna/midnight.nvim',  lazy = false,   priority = 1000 },
 	{
 		'ramojus/mellifluous.nvim',
-		opts = {
-			color_set = 'mellifluous',
-
-			styles = {
-				comments = { italic = true },
-				keywords = { bold = true },
-			},
-		}
+		-- opts = {
+		-- 	styles = {
+		-- 		comments = { italic = true },
+		-- 		-- main_keywords = { bold = true },
+		-- 		-- other_keywords = { bold = true },
+		-- 	},
+		-- }
 	},
 	'AlexvZyl/nordic.nvim',
 	{

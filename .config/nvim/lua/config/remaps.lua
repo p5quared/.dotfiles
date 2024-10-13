@@ -30,6 +30,7 @@ vim.keymap.set("n", "<C-down>", ":resize -2<CR>", { desc = "Resize -Vertical" })
 vim.keymap.set("n", "<C-left>", ":vertical resize +2<CR>", { desc = "Resize +Horizontal" })
 vim.keymap.set("n", "<C-right>", ":vertical resize -2<CR>", { desc = "Resize -Horizontal" })
 
+vim.keymap.set("n", "<C-C>", ":nohl<CR>", { desc = "No Highlight" })
 
 -- gitsigns
 local gs = package.loaded.gitsigns
@@ -51,26 +52,9 @@ local noice = require('noice')
 vim.keymap.set("n", "<leader>nd", function() noice.cmd('dismiss') end, { desc = "[N]oice [D]ismiss" })
 vim.keymap.set("n", "<leader>nl", function() noice.cmd('last') end, { desc = "[N]oice [L]ast" })
 
-
-vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
-vim.keymap.set('n', "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todo: Trouble" })
-
-local dap = require('dap')
-local gdap = require('dap-go')
-
--- vim.keymap.set('n', "<leader>db", function() dap.toggle_breakpoint() end, { desc = "[D]ebug [B]reakpoint" })
-vim.keymap.set('n', "<leader>dc", function() dap.continue() end, { desc = "[D]ebug [C]ontinue" })
-vim.keymap.set('n', "<leader>dn", function() dap.step_over() end, { desc = "[D]ebug [N]ext" })
-vim.keymap.set('n', "<leader>ds", function() dap.step_into() end, { desc = "[D]ebug [S]tep" })
-vim.keymap.set('n', "<leader>dr", function() dap.repl.open() end, { desc = "[D]ebug [R]epl" })
-
-vim.keymap.set('n', "<leader>dt", function() gdap.debug_test() end, { desc = "[D]ebug [T]est" })
--- vim.keymap.set('n', "<leader>da", function() gdap.debug_last_test() end, { desc = "[D]ebug Test [A]gain" })
-
-
 -- Todo-Comments
-vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
-vim.keymap.set('n', "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todo: Trouble" })
+-- vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
+-- vim.keymap.set('n', "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todo: Trouble" })
 
 -- Oil
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
