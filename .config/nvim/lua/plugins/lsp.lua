@@ -6,7 +6,7 @@ return {
 		-- LSP Support
 		{ 'folke/lazydev.nvim' },
 		{ 'neovim/nvim-lspconfig' }, -- Required
-		{                      -- Optional
+		{                          -- Optional
 			'williamboman/mason.nvim',
 			lazy = false,
 			init = function()
@@ -26,7 +26,7 @@ return {
 					opts = {},
 				},
 			}
-		},                    -- Required
+		},                        -- Required
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 		{
 			'L3MON4D3/LuaSnip',
@@ -81,18 +81,6 @@ return {
 					local lua_opts = lsp_zero.nvim_lua_ls()
 					require('lspconfig').lua_ls.setup(lua_opts)
 				end,
-				basedpyright = function()
-					require('lspconfig').basedpyright.setup({
-						settings = {
-							basedpyright = {
-								analysis = {
-									-- "off", "baasic", "standard", "strict", "all"
-									typeCheckingMode = "standard",
-								},
-							}
-						}
-					})
-				end,
 				function(server_name)
 					require('lspconfig')[server_name].setup({})
 				end,
@@ -104,8 +92,6 @@ return {
 		lspkind.init({
 			symbol_map = { Copilot = "" }
 		})
-		--TODO: Doesn't work
-		--vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 		local cmp_action = lsp_zero.cmp_action()
 		cmp.setup({
