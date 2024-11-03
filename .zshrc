@@ -118,6 +118,7 @@ alias 341="nvim scp://timberlake//home/csdue/petervai/341/"
 
 # pnpm
 export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 export PNPM_HOME="/Users/petervaiciulis/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
