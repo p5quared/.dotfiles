@@ -48,9 +48,6 @@ vim.keymap.set('n', '<leader>fb', tb.buffers, { desc = "[F]ind [B]uffers" })
 vim.keymap.set('n', '<leader>fc', tb.colorscheme, { desc = "[F]ind [C]olorscheme" })
 vim.keymap.set('n', '<leader>fk', tb.keymaps, { desc = "[F]ind [K]eymaps" })
 
-local noice = require('noice')
-vim.keymap.set("n", "<leader>nd", function() noice.cmd('dismiss') end, { desc = "[N]oice [D]ismiss" })
-vim.keymap.set("n", "<leader>nl", function() noice.cmd('last') end, { desc = "[N]oice [L]ast" })
 
 -- Todo-Comments
 -- vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
