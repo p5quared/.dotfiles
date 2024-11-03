@@ -4,7 +4,7 @@ return {
 	branch = 'v3.x',
 	dependencies = {
 		-- LSP Support
-		{ 'folke/neodev.nvim' },
+		{ 'folke/lazydev.nvim' },
 		{ 'neovim/nvim-lspconfig' }, -- Required
 		{                      -- Optional
 			'williamboman/mason.nvim',
