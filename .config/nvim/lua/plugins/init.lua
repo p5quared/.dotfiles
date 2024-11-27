@@ -18,15 +18,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
 		config = true,
 	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
-		keys = {
-			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", desc = "Markdown: Preview" },
-		},
-	},
 	'lervag/vimtex',
 	{
 		"lukas-reineke/indent-blankline.nvim",
