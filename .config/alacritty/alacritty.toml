@@ -1,12 +1,3 @@
-import = [
-	"~/.dotfiles/.config/alacritty/themes/themes/meliora.toml",
-	"~/.dotfiles/.config/alacritty/fonts/Maple.toml"
-]
-
-# shell = { program = "~/bin/zsh", args = [] }
-
-live_config_reload = true
-
 [window]
 decorations = "None"
 opacity = 1.0
@@ -22,3 +13,14 @@ blink_timeout = 1
 
 [mouse]
 hide_when_typing = true
+
+[general]
+
+# shell = { program = "~/bin/zsh", args = [] }
+
+live_config_reload = true
+import = [
+	"~/.dotfiles/.config/alacritty/themes/themes/campbell.toml",
+	# "~/.dotfiles/.config/alacritty/fonts/Fantasque.toml"
+	"~/.dotfiles/.config/alacritty/fonts/MonoLisa.toml"
+]

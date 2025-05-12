@@ -1,0 +1,5 @@
+[font]
+size = 16
+normal = { family = "MonoLisa Nerd Font Mono", style = "Regular"}
+bold = { family = "Maple Mono NF", style = "Regular"}
+italic = { family = "MonoLisa Nerd Font Mono", style = "Semibold"}
