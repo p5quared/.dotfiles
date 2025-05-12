@@ -67,6 +67,9 @@ return {
 				goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
 			},
 		},
+		disable = function(lang, bufnr)
+			return vim.api.nvim_buf_line_count(bufnr)
+		end
 	},
 	---@param opts TSConfig
 	config = function(_, opts)
