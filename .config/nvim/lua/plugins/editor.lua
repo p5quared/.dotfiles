@@ -42,7 +42,7 @@ return {
 		tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
-	{
+	{ -- TODO: Consider dropping this
 		'echasnovski/mini.pairs',
 		version = false,
 		config = true,
@@ -66,7 +66,6 @@ return {
 	},
 	{
 		"zbirenbaum/copilot.lua",
-		enabled = true,
 		cmd = "Copilot",
 		event = "InsertEnter",
 		opts = {
@@ -74,7 +73,7 @@ return {
 			panel = { enabled = false },
 		},
 	},
-	{
+	{          -- TODO: Probably remove
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
@@ -114,7 +113,7 @@ return {
 	{
 		'L3MON4D3/LuaSnip',
 		dependencies = { "rafamadriz/friendly-snippets" },
-		init = function()
+		config = function()
 			require('luasnip').config.setup()
 			require('luasnip/loaders/from_vscode').lazy_load()
 		end

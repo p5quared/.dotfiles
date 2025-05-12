@@ -5,9 +5,6 @@ keybinds {
     normal {
 		unbind "Ctrl h" // I use this for navigating nvim splits
 		// unbind "Ctrl s" // I don't need this
-		bind "Ctrl s" { SwitchToMode "session"; }
-		unbind "Ctrl o" // Old session switcher
-
 
         // bind instructions can include one or more keys (both keys will be bound separately)
         // bind keys can include one or more actions (all actions will be performed with no sequential guarantees)
@@ -38,7 +35,7 @@ keybinds {
 }
 
 
-theme "catppuccin-mocha"
+theme "vesper"
 
 themes {
   catppuccin-latte {

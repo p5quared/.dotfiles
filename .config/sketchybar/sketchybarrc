@@ -95,8 +95,6 @@ sketchybar --set space.T icon=""
 sketchybar --set space.T label="Text"
 sketchybar --set space.S icon=""
 sketchybar --set space.S label="Slack"
-sketchybar --set space.N icon="󱞁"
-sketchybar --set space.N label="Notes"
 
 
 ##### Adding Left Items #####

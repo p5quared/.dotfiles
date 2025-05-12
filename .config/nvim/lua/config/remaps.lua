@@ -43,8 +43,6 @@ local tb = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', tb.find_files, { desc = "[F]ind [F]ile" })
 vim.keymap.set('n', '<leader>ft', tb.git_files, { desc = "[F]ind [T]ree" })
 vim.keymap.set('n', '<leader>fg', tb.live_grep, { desc = "[F]ind [G]rep" })
-vim.keymap.set('v', '<leader>fs', tb.grep_string, { desc = "[F]ind [S]election" })
-vim.keymap.set('n', '<leader>fb', tb.buffers, { desc = "[F]ind [B]uffers" })
 vim.keymap.set('n', '<leader>fc', tb.colorscheme, { desc = "[F]ind [C]olorscheme" })
 vim.keymap.set('n', '<leader>fk', tb.keymaps, { desc = "[F]ind [K]eymaps" })
 

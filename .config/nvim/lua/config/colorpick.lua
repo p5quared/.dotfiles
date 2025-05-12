@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
-	color = color or "vague" -- catppuccin frappe is preferred
+	-- color = color or "vague" -- catppuccin frappe is preferred
+	color = color or "ef-owl" -- catppuccin frappe is preferred
 
 	vim.cmd.colorscheme(color)
 	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

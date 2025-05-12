@@ -1,26 +1,14 @@
 return {
-	'rose-pine/neovim',
-	"edeneast/nightfox.nvim",
+	"oonamo/ef-themes.nvim",
 	"folke/tokyonight.nvim",
+	"RRethy/base16-nvim",
 	"catppuccin/nvim",
-	"rebelot/kanagawa.nvim",
 	"yorik1984/newpaper.nvim",
-	"fynnfluegge/monet.nvim",
 	'Mofiqul/vscode.nvim',
-	'liuchengxu/space-vim-theme',
-	{ "miikanissi/modus-themes.nvim", priority = 1000 },
-	'projekt0n/github-nvim-theme',
-	'liuchengxu/space-vim-dark',
 	"vague2k/vague.nvim",
-	{
-		"dgox16/oldworld.nvim",
-		opts = {
-			styles = {
-				comments = { italic = true }
-			}
-		}
-	},
-	{ 'dasupradyumna/midnight.nvim',  lazy = false,   priority = 1000 },
+	"yorickpeterse/vim-paper",
+	"ashen-org/ashen.nvim",
+	{ 'datsfilipe/vesper.nvim' },
 	{
 		'ramojus/mellifluous.nvim',
 		-- opts = {
@@ -31,7 +19,6 @@ return {
 		-- 	},
 		-- }
 	},
-	'AlexvZyl/nordic.nvim',
 	{
 		"mcchrish/zenbones.nvim",
 		dependencies = {
