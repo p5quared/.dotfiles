@@ -8,6 +8,7 @@ return {
 	'Mofiqul/vscode.nvim',
 	"vague2k/vague.nvim",
 	"yorickpeterse/vim-paper",
+	"p00f/alabaster.nvim",
 	"ashen-org/ashen.nvim",
 	{ 'datsfilipe/vesper.nvim' },
 	{
