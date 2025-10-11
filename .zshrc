@@ -84,6 +84,10 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init zsh)"
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 alias zshconfig="nvim ~/.zshrc"
 alias zz="zellij"
 
