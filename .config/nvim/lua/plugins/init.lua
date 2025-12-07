@@ -1,10 +1,5 @@
 return {
 	{
-		"folke/lazydev.nvim",
-		ft = "lua",
-		config = true,
-	},
-	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
