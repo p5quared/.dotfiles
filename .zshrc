@@ -120,3 +120,6 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$HOME/.elixir-install/installs/otp/28.1/erts-16.1/bin:$PATH
+export PATH=$HOME/.elixir-install/installs/elixir/1.19.0-otp-28/bin:$PATH
