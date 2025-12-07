@@ -21,6 +21,8 @@ hide_when_typing = true
 live_config_reload = true
 import = [
 	"~/.dotfiles/.config/alacritty/themes/themes/campbell.toml",
+	# "~/.dotfiles/.config/alacritty/themes/themes/alabaster.toml",
+
 	# "~/.dotfiles/.config/alacritty/fonts/Fantasque.toml"
 	"~/.dotfiles/.config/alacritty/fonts/MonoLisa.toml"
 ]
