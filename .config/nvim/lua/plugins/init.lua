@@ -13,7 +13,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
 		config = true,
 	},
-	'lervag/vimtex',
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
@@ -42,9 +41,5 @@ return {
 		opts = {
 			-- add any custom options here
 		}
-	},
-	{
-		"NoahTheDuke/vim-just",
-		ft = { "just" },
 	},
 }

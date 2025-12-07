@@ -21,21 +21,4 @@ return {
 			"rktjmp/lush.nvim"
 		},
 	},
-
-	-- Not a colorscheme
-	{
-		"norcalli/nvim-colorizer.lua",
-		opts = {
-			'css',
-			'javascript',
-			'typescripts',
-			'lua',
-			'go',
-			'ts',
-			html = {
-				mode = 'foreground',
-			}
-		},
-		config = true,
-	}
 }

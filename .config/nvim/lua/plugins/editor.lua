@@ -27,17 +27,6 @@ return {
 		end,
 	},
 	{
-		"hedyhli/outline.nvim",
-		lazy = true,
-		cmd = { "Outline", "OutlineOpen" },
-		keys = { -- Example mapping to toggle outline
-			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-		},
-		opts = {
-			-- Your setup opts here
-		},
-	},
-	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',
 		dependencies = { 'nvim-lua/plenary.nvim' },
@@ -46,23 +35,6 @@ return {
 		'echasnovski/mini.pairs',
 		version = false,
 		config = true,
-	},
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = true,
-		init = function()
-			local harpoon = require("harpoon")
-
-			vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-			vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-			vim.keymap.set("n", "<C-1>", function() harpoon:list():select(1) end)
-			vim.keymap.set("n", "<C-2>", function() harpoon:list():select(2) end)
-			vim.keymap.set("n", "<C-3>", function() harpoon:list():select(3) end)
-			vim.keymap.set("n", "<C-4>", function() harpoon:list():select(4) end)
-		end
 	},
 	{
 		"zbirenbaum/copilot.lua",
