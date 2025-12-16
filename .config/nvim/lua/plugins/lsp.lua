@@ -3,17 +3,6 @@ return {
 		'neovim/nvim-lspconfig',
 		dependencies = {
 			{
-				'williamboman/mason.nvim',
-				lazy = false,
-				config = function()
-					require('mason').setup()
-					-- Auto-update mason packages
-					pcall(vim.cmd, 'MasonUpdate')
-				end,
-			},
-			{ 'williamboman/mason-lspconfig.nvim' },
-
-			{
 				'folke/lazydev.nvim',
 				ft = 'lua',
 				opts = {
@@ -42,6 +31,7 @@ return {
 
 		config = function()
 			local lsp_helpers = require('config.lsp_helpers')
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
@@ -50,21 +40,44 @@ return {
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
 					lsp_helpers.setup_keymaps(bufnr)
-
 					lsp_helpers.setup_format_on_save(bufnr, client)
 				end,
 			})
 
-			require('mason-lspconfig').setup({
-				handlers = {
-					function(server_name)
-						require('lspconfig')[server_name].setup({
-							capabilities = require('cmp_nvim_lsp').default_capabilities(),
-						})
-					end,
+			vim.lsp.config('rust_analyzer', {
+				cmd = { '/home/linuxbrew/.linuxbrew/bin/rust-analyzer' },
+				capabilities = capabilities,
+				settings = {
+					['rust-analyzer'] = {
+						checkOnSave = {
+							enable = false,
+						},
+						diagnostics = {
+							enable = false,
+						},
+					},
 				},
 			})
+			vim.lsp.enable('rust_analyzer')
 
+			vim.lsp.config('lua_ls', {
+				cmd = { '/home/linuxbrew/.linuxbrew/bin/lua-language-server' },
+				capabilities = capabilities,
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { 'vim' },
+						},
+						workspace = {
+							checkThirdParty = false,
+						},
+						telemetry = {
+							enable = false,
+						},
+					},
+				},
+			})
+			vim.lsp.enable('lua_ls')
 			local cmp = require('cmp')
 			local lspkind = require('lspkind')
 
