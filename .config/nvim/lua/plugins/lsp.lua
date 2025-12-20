@@ -45,23 +45,13 @@ return {
 			})
 
 			vim.lsp.config('rust_analyzer', {
-				cmd = { '/home/linuxbrew/.linuxbrew/bin/rust-analyzer' },
+				cmd = { '/opt/homebrew/bin/rust-analyzer' },
 				capabilities = capabilities,
-				settings = {
-					['rust-analyzer'] = {
-						checkOnSave = {
-							enable = false,
-						},
-						diagnostics = {
-							enable = false,
-						},
-					},
-				},
 			})
 			vim.lsp.enable('rust_analyzer')
 
 			vim.lsp.config('lua_ls', {
-				cmd = { '/home/linuxbrew/.linuxbrew/bin/lua-language-server' },
+				cmd = { '/opt/homebrew/bin/lua-language-server' },
 				capabilities = capabilities,
 				settings = {
 					Lua = {
@@ -70,9 +60,6 @@ return {
 						},
 						workspace = {
 							checkThirdParty = false,
-						},
-						telemetry = {
-							enable = false,
 						},
 					},
 				},
