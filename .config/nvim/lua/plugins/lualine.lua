@@ -9,13 +9,11 @@ local config = {
 		lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
 		lualine_b = { { 'filename', path = 4 }, 'diagnostics' },
 		lualine_c = {
-			'%=', --[[ add your center compoentnts here in place of this comment ]]
+			'lsp_status', --[[ add your center compoentnts here in place of this comment ]]
 		},
 		lualine_x = {},
 		lualine_y = { { 'branch', fmt = function(str) return str:sub(1, 40) end }, 'diff' },
-		lualine_z = {
-			{ 'datetime', style = "%a %H:%M%p", separator = { right = '' }, left_padding = 2 },
-		},
+		lualine_z = {},
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -29,7 +27,7 @@ local config = {
 	},
 	winbar = {
 	},
-	extensions = { 'trouble', 'nvim-dap-ui', 'mason', 'oil' },
+	extensions = { 'trouble', 'oil' },
 }
 
 return {
