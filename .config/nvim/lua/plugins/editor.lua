@@ -23,15 +23,6 @@ return {
 		version = false,
 		config = true,
 	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		opts = {
-			suggestions = { enabled = false },
-			panel = { enabled = false },
-		},
-	},
 	{          -- TODO: Probably remove
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
