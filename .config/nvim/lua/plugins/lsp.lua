@@ -11,7 +11,6 @@ return {
 					},
 				},
 			},
-
 			{
 				'hrsh7th/nvim-cmp',
 				dependencies = {
@@ -41,6 +40,7 @@ return {
 
 					lsp_helpers.setup_keymaps(bufnr)
 					lsp_helpers.setup_format_on_save(bufnr, client)
+					lsp_helpers.setup_inlay_hints(bufnr, client)
 				end,
 			})
 

@@ -56,3 +56,8 @@ vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory
 
 -- restore the session for the current directory
 vim.api.nvim_set_keymap("n", "<leader>`", [[<cmd>lua require("persistence").load()<cr>]], {})
+
+-- Inlay hints toggle
+vim.keymap.set("n", "<leader>ih", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle [I]nlay [H]ints" })

@@ -9,6 +9,12 @@ function M.setup_keymaps(bufnr)
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 end
 
+function M.setup_inlay_hints(bufnr, client)
+	if client.supports_method('textDocument/inlayHint') then
+		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+	end
+end
+
 function M.setup_format_on_save(bufnr, client)
 	local format_filetypes = {
 		lua = true,
