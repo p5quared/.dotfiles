@@ -6,4 +6,5 @@ return {
 			vim.cmd.colorscheme("vague")
 		end,
 	},
+	'Mofiqul/vscode.nvim'
 }
