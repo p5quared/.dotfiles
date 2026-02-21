@@ -38,15 +38,6 @@ vim.keymap.set("n", "<leader>gb", function() gs.toggle_current_line_blame() end,
 vim.keymap.set("n", "<leader>ghp", function() gs.preview_hunk_inline() end, { desc = "[G]it [H]unk [P]review (Inline)" })
 vim.keymap.set("n", "<leader>ghP", function() gs.preview_hunk() end, { desc = "[G]it [H]unk [P]review" })
 
--- Telescope
-local tb = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', tb.find_files, { desc = "[F]ind [F]ile" })
-vim.keymap.set('n', '<leader>ft', tb.git_files, { desc = "[F]ind [T]ree" })
-vim.keymap.set('n', '<leader>fg', tb.live_grep, { desc = "[F]ind [G]rep" })
-vim.keymap.set('n', '<leader>fc', tb.colorscheme, { desc = "[F]ind [C]olorscheme" })
-vim.keymap.set('n', '<leader>fk', tb.keymaps, { desc = "[F]ind [K]eymaps" })
-
-
 -- Todo-Comments
 -- vim.keymap.set('n', "<leader>tt", "<cmd>TodoTelescope<CR>", { desc = "Todo: Telescope" })
 -- vim.keymap.set('n', "<leader>td", "<cmd>TodoTrouble<CR>", { desc = "Todo: Trouble" })

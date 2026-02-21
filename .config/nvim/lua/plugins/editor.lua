@@ -13,11 +13,6 @@ return {
 		},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.5',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-	},
 	{ -- TODO: Consider dropping this
 		'echasnovski/mini.pairs',
 		version = false,
