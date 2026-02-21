@@ -18,10 +18,6 @@ return {
 					{ 'hrsh7th/cmp-buffer' },
 					{ 'hrsh7th/cmp-path' },
 					{ 'hrsh7th/cmp-cmdline' },
-					{
-						'zbirenbaum/copilot-cmp',
-						opts = {},
-					},
 				},
 			},
 
@@ -80,16 +76,11 @@ return {
 			local cmp = require('cmp')
 			local lspkind = require('lspkind')
 
-			lspkind.init({
-				symbol_map = {
-					Copilot = '',
-				},
-			})
+			lspkind.init()
 
 			cmp.setup({
 				sources = cmp.config.sources({
 					{ name = 'nvim_lsp' },
-					{ name = 'copilot' },
 					{ name = 'path' },
 					{ name = 'buffer' },
 				}),
