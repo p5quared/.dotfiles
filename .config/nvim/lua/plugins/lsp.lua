@@ -50,6 +50,18 @@ return {
 			})
 			vim.lsp.enable('rust_analyzer')
 
+			vim.lsp.config('pyright', {
+				cmd = { '/opt/homebrew/bin/pyright-langserver', '--stdio' },
+				capabilities = capabilities,
+			})
+			vim.lsp.enable('pyright')
+
+			vim.lsp.config('gopls', {
+				cmd = { '/opt/homebrew/bin/gopls' },
+				capabilities = capabilities,
+			})
+			vim.lsp.enable('gopls')
+
 			vim.lsp.config('lua_ls', {
 				cmd = { '/opt/homebrew/bin/lua-language-server' },
 				capabilities = capabilities,

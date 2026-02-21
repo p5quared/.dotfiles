@@ -25,6 +25,7 @@ function M.setup_format_on_save(bufnr, client)
 		ocaml = true,
 		terraform = true,
 		rust = true,
+		java = true,
 	}
 
 	local filetype = vim.bo[bufnr].filetype
