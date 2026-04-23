@@ -3,7 +3,8 @@ return {
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	opts = {
 		defaults = {
-			path_display = { "filename_first" }
+			path_display = { "filename_first" },
+			file_ignore_patterns = { "__pycache__/" },
 		}
 	},
 	keys = {
