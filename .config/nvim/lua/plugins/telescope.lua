@@ -4,7 +4,7 @@ return {
 	opts = {
 		defaults = {
 			path_display = { "filename_first" },
-			file_ignore_patterns = { "__pycache__/" },
+			file_ignore_patterns = { "__pycache__/", "__init__.py" },
 		}
 	},
 	keys = {
