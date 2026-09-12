@@ -10,7 +10,7 @@ function M.setup_keymaps(bufnr)
 end
 
 function M.setup_inlay_hints(bufnr, client)
-	if client.supports_method('textDocument/inlayHint') then
+	if client:supports_method('textDocument/inlayHint') then
 		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 	end
 end
@@ -26,10 +26,12 @@ function M.setup_format_on_save(bufnr, client)
 		terraform = true,
 		rust = true,
 		java = true,
+		gleam = true,
+		clojure = true,
 	}
 
 	local filetype = vim.bo[bufnr].filetype
-	if format_filetypes[filetype] and client.supports_method('textDocument/formatting') then
+	if format_filetypes[filetype] and client:supports_method('textDocument/formatting') then
 		local augroup = vim.api.nvim_create_augroup('LspFormatOnSave', { clear = false })
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 		vim.api.nvim_create_autocmd('BufWritePre', {
