@@ -2,7 +2,7 @@ return {
 	{
 		"kdheepak/lazygit.nvim",
 		keys = {
-			{ "<leader>gg", "<cmd>LazyGit<CR>", desc = "Open LazyGit" }
+			{ "<leader>gg", "<cmd>LazyGitCurrentFile<CR>", desc = "Open LazyGit for current package" }
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
