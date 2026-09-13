@@ -3,7 +3,13 @@ return {
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	opts = {
 		defaults = {
-			path_display = { "filename_first" },
+			path_display = function(opts, path)
+				local display_path = path:gsub('[^/]+$', require('config.file_labels'))
+				return require('telescope.utils').transform_path(
+					vim.tbl_extend('force', opts, { path_display = { 'filename_first' } }),
+					display_path
+				)
+			end,
 			file_ignore_patterns = { "__pycache__/", "__init__.py" },
 		}
 	},

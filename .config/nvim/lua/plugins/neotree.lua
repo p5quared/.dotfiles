@@ -1,3 +1,15 @@
+local file_label = require('config.file_labels')
+
+local function name_component(source)
+	return function(config, node, state)
+		local result = require('neo-tree.sources.' .. source .. '.components').name(config, node, state)
+		if node.type == 'file' then
+			result.text = file_label(result.text)
+		end
+		return result
+	end
+end
+
 local function context_path()
 	if vim.bo.filetype == 'neo-tree' then
 		local state = require('neo-tree.sources.manager').get_state_for_window()
@@ -68,6 +80,7 @@ return {
 				width = 35,
 			},
 			filesystem = {
+				components = { name = name_component('filesystem') },
 				bind_to_cwd = false,
 				group_empty_dirs = true,
 				hijack_netrw_behavior = 'disabled',
@@ -102,7 +115,11 @@ return {
 					},
 				},
 			},
-			buffers = { bind_to_cwd = false },
+			buffers = {
+				bind_to_cwd = false,
+				components = { name = name_component('buffers') },
+			},
+			git_status = { components = { name = name_component('git_status') } },
 		},
 	},
 	{
