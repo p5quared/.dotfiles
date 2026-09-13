@@ -2,6 +2,7 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
+			'Crysthamus/nvim-file-operations',
 			{
 				'folke/lazydev.nvim',
 				ft = 'lua',
@@ -26,7 +27,11 @@ return {
 
 		config = function()
 			local lsp_helpers = require('config.lsp_helpers')
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = vim.tbl_deep_extend('force',
+				require('cmp_nvim_lsp').default_capabilities(),
+				require('nvim-file-operations.config').default_capabilities()
+			)
+			vim.lsp.config('*', { capabilities = capabilities })
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
@@ -42,25 +47,21 @@ return {
 
 			vim.lsp.config('rust_analyzer', {
 				cmd = { '/opt/homebrew/bin/rust-analyzer' },
-				capabilities = capabilities,
 			})
 			vim.lsp.enable('rust_analyzer')
 
 			vim.lsp.config('pyright', {
 				cmd = { '/opt/homebrew/bin/pyright-langserver', '--stdio' },
-				capabilities = capabilities,
 			})
 			vim.lsp.enable('pyright')
 
 			vim.lsp.config('gopls', {
 				cmd = { '/opt/homebrew/bin/gopls' },
-				capabilities = capabilities,
 			})
 			vim.lsp.enable('gopls')
 
 			vim.lsp.config('lua_ls', {
 				cmd = { '/opt/homebrew/bin/lua-language-server' },
-				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {

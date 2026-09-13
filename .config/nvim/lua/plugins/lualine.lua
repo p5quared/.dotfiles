@@ -27,7 +27,7 @@ local config = {
 	},
 	winbar = {
 	},
-	extensions = { 'trouble', 'oil' },
+	extensions = { 'trouble', 'oil', 'neo-tree' },
 }
 
 return {
