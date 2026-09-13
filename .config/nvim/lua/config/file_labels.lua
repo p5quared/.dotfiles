@@ -1,4 +1,4 @@
-local hidden = { java = true }
+local hidden = { java = true, lua = true, rust = true }
 
 return function(name)
 	local stem, extension = name:match('^([^.].*)%.([^.]+)$')
