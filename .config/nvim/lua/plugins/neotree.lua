@@ -69,6 +69,7 @@ return {
 			},
 			filesystem = {
 				bind_to_cwd = false,
+				group_empty_dirs = true,
 				hijack_netrw_behavior = 'disabled',
 				use_libuv_file_watcher = true,
 				follow_current_file = { enabled = true },
